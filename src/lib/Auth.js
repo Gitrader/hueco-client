@@ -14,7 +14,7 @@ function withAuth(WrappedComponent) {
         {(valueFromProvider) => (
           <WrappedComponent
             {...props}
-            user={valueFromProvider.user}
+            business={valueFromProvider.business}
             isLoggedIn={valueFromProvider.isLoggedIn}
             isLoading={valueFromProvider.isLoading}
             login={valueFromProvider.login}
@@ -29,7 +29,7 @@ function withAuth(WrappedComponent) {
 
 class AuthProvider extends React.Component {
   state = {
-    user: null,
+    business: null,
     isLoggedIn: false,
     isLoading: true
   }
@@ -39,42 +39,68 @@ class AuthProvider extends React.Component {
     // make a call to the server '/me' and check if user is authenitcated
     axios.get('http://localhost:5000/auth/me', { withCredentials: true })
       .then((response) => {
-        const user = response.data;
-        this.setState({ isLoggedIn: true, isLoading: false, user });
+        const business = response.data;
+        this.setState({ isLoggedIn: true, isLoading: false, business });
       })
-      .catch((err) => this.setState({ isLoggedIn: false, isLoading: false, user: null }));
+      .catch((err) => this.setState({ isLoggedIn: false, isLoading: false, business: null }));
   }
 
-  login = (username, password) => {
-    axios.post('http://localhost:5000/auth/login', { username, password }, { withCredentials: true })
+  login = (email, password) => {
+    axios.post('http://localhost:5000/auth/login', { email, password }, { withCredentials: true })
       .then((response) => {
-        const user = response.data;
-        this.setState({ isLoggedIn: true, isLoading: false, user });
+        const business = response.data;
+        this.setState({ isLoggedIn: true, isLoading: false, business });
       })
       .catch((err) => console.log(err));
   }
-  signup = (username, password) => {
-    axios.post('http://localhost:5000/auth/signup', { username, password }, { withCredentials: true })
+  signup = (
+    business_name, 
+    email, 
+    password,
+    address,
+    city,
+    zip_code,
+    service,
+    phone_number,
+    image_url,
+    description,
+    coordinates
+    ) => {
+    axios.post('http://localhost:5000/auth/signup', 
+    { 
+      business_name, 
+      email, 
+      password,
+      address,
+      city,
+      zip_code,
+      service,
+      phone_number,
+      image_url,
+      description,
+      coordinates
+    }, 
+    { withCredentials: true })
       .then((response) => {
-        const user = response.data;
-        this.setState({ isLoggedIn: true, isLoading: false, user });
+        const business = response.data;
+        this.setState({ isLoggedIn: true, isLoading: false, business });
       })
       .catch((err) => console.log(err));
   }
   logout = () => {
     axios.get('http://localhost:5000/auth/logout', { withCredentials: true })
       .then((response) => {
-        this.setState({ isLoggedIn: false, isLoading: false, user: null });
+        this.setState({ isLoggedIn: false, isLoading: false, business: null });
       })
       .catch((err) => console.log(err));
   }
 
   render() {
-    const { user, isLoggedIn, isLoading } = this.state;
+    const { business, isLoggedIn, isLoading } = this.state;
     const { login, signup, logout } = this;
 
     return (
-      <Provider value={{ user, isLoggedIn, isLoading, login, signup, logout }}>
+      <Provider value={{ business, isLoggedIn, isLoading, login, signup, logout }}>
         {this.props.children}
       </Provider>
     )

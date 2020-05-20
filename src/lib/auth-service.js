@@ -8,16 +8,42 @@ class Auth {
     });
   }
 
-  signup({ username, password }) {
+  signup({ 
+    business_name, 
+    email, 
+    password,
+    address,
+    city,
+    zip_code,
+    service,
+    phone_number,
+    image_url,
+    description,
+    coordinates
+  }) 
+  {
     return this.auth
-      .post("/auth/signup", { username, password })
+      .post("/auth/signup", 
+      { 
+        business_name, 
+        email, 
+        password,
+        address,
+        city,
+        zip_code,
+        service,
+        phone_number,
+        image_url,
+        description,
+        coordinates
+      })
       .then(({ data }) => data);
     // .then((response) => response.data);
   }
 
-  login({ username, password }) {
+  login({ email, password }) {
     return this.auth
-      .post("/auth/login", { username, password })
+      .post("/auth/login", { email, password })
       .then(({ data }) => data);
     // .then((response) => response.data);
   }
