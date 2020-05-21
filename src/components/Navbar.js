@@ -6,7 +6,7 @@ class Navbar extends Component {
   render() {
     // `user`, `logout`, `isLoggedIn` are coming from the AuthProvider 
     // and are injected by the withAuth HOC
-    const { user, logout, isLoggedIn } = this.props;
+    const { user,business, logout, isLoggedIn } = this.props;
 
     return (
       <nav className="navbar">
@@ -16,7 +16,7 @@ class Navbar extends Component {
         {
           isLoggedIn
             ? <div>
-              <p>{user.username}</p>
+              <p>{business.email}</p>
               <button onClick={logout}> Logout </button>
             </div>
             : (
