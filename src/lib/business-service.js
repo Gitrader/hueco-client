@@ -10,7 +10,11 @@ class Business {
 
 
 
-
+getAllBusinesses(){
+    return this.business
+    .get("/businesses")
+    .then(({ data }) => data);
+}
 
 
 getBusiness() {
@@ -21,7 +25,6 @@ return this.business
 }
 
 
-////////////////////ID//////////////////////////
 ///route : businesses/:businessId/add-hueco
 addAHueco(id,{timeSlot}){
 return this.business
@@ -43,16 +46,6 @@ return this.business
 .delete(`/businesses/${businessId}/delete/${myHuecoId}`)
 .then(({ data }) => data);
 }
-
-//////////////////////ID////////////////////////
-
-
-
-
-
-
-
-
 
 
 }
