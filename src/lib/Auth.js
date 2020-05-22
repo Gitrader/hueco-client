@@ -66,6 +66,17 @@ class AuthProvider extends React.Component {
     description,
     coordinates
     ) => {
+      console.log("signup",  business_name, 
+      email, 
+      password,
+      address,
+      city,
+      zip_code,
+      service,
+      phone_number,
+      image_url,
+      description,
+      coordinates )
     axios.post('http://localhost:5000/auth/signup', 
     { 
       business_name, 

@@ -8,7 +8,7 @@ class Private extends Component {
         <h1>Private Route</h1>
         {
           this.props.isLoggedIn
-            ? <h3>Username: {this.props.user.username}</h3>
+            ? <h3>Username: {this.props.business.business_name}</h3>
             : null
         }
 

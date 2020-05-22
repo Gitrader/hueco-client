@@ -18,8 +18,11 @@ class Signup extends Component {
   //  coordinates:""
   };
 
+  
+
   handleFormSubmit = event => {
     event.preventDefault();
+    console.log("state",this.state)
     const {
       business_name, 
       email, 
