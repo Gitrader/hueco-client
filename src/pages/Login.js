@@ -1,43 +1,85 @@
+
+import 'antd/dist/antd.css';
 import React, { Component } from "react";
 import { withAuth } from './../lib/Auth';
+import { Form, Input, Button, Checkbox } from 'antd';
 
-class Login extends Component {
-  state = { username: "", password: "" };
+const layout = {
+  labelCol: {
+    span: 8,
+  },
+  wrapperCol: {
+    span: 16,
+  },
+};
+const tailLayout = {
+  wrapperCol: {
+    offset: 8,
+    span: 16,
+  },
+};
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    const { email, password } = this.state;
-
-    this.props.login(email, password);
-    // this.props.login method is coming from the AuthProvider
-    // injected by the withAuth() HOC
+const Login = (props) => {
+  const onFinish = values => {
+    console.log('Success:', values);
+    const {email,password}=values
+    props.login(email,password)
   };
 
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
+  const onFinishFailed = errorInfo => {
+    console.log('Failed:', errorInfo);
   };
 
-  render() {
-    const { email, password } = this.state;
+  return (
+    <div>
+    <Form
+      {...layout}
+      name="basic"
+      initialValues={{
+        remember: true,
+      }}
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+    >
+      <Form.Item
+        label="Email"
+        name="email"
+        rules={[
+          {
+              type:"email",
+            required: true,
+            message: 'Please input your email!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
 
-    return (
-      <div>
-        <h1>Login</h1>
+      <Form.Item
+        label="Password"
+        name="password"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your password!',
+          },
+        ]}
+      >
+        <Input.Password />
+      </Form.Item>
 
-        <form onSubmit={this.handleFormSubmit}>
+      <Form.Item {...tailLayout} name="remember" valuePropName="checked">
+        <Checkbox>Remember me</Checkbox>
+      </Form.Item>
 
-          <label>Email:</label>
-          <input type="email" name="email" value={email} onChange={this.handleChange} />
-
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
-
-          <input type="submit" value="Login" />
-        </form>
-      </div>
-    );
-  }
-}
+      <Form.Item {...tailLayout}>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
+    </div>
+  );
+};
 
 export default withAuth(Login);

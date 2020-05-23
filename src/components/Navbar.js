@@ -28,7 +28,7 @@ class Navbar extends Component {
                 <br />
                 <Link to="/signup">
                   {' '}
-                  <button className="navbar-button">Sign Up</button>{' '}
+                  <button className="navbar-button">Sign Up my business</button>{' '}
                 </Link>
               </>
             )}

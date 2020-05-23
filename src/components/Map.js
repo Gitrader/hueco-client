@@ -10,8 +10,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 export default class Map extends Component {
   state = {
     viewport: {
-      width: "100vh",
-      height: "100vh",
+      width: "80vh",
+      height: "80vh",
       latitude: 41.3851,
       longitude: 2.1734,
       zoom: 10,
@@ -83,11 +83,13 @@ return nextState !== this.state
         
         
       } = this.state.viewport;
-      const {businesses,selectedBusiness}=this.state
+      const {businesses}=this.state
+      const {selectedBusiness}=this.state
       const viewport = { latitude, longitude, width, height, zoom };
       return (
         <div>
-        
+        <div class="row">
+          <div class="col-5" >
 
           <ReactMapGL
             {...this.state.viewport}
@@ -107,7 +109,7 @@ return nextState !== this.state
             <NavigationControl className="NavigationControl"/>
   
   
-            {businesses?
+            {/* {businesses?
                 businesses.map((business) => {
                    return( 
                        
@@ -131,7 +133,7 @@ return nextState !== this.state
               </Marker>
               
                    )
-            }):null}
+            }):null} */}
   
             {selectedBusiness ? (
               <Popup className="popup"
@@ -150,6 +152,8 @@ return nextState !== this.state
               </Popup>
             ) : null}
           </ReactMapGL>
+        </div>
+        </div>
         </div>
       );
     }

@@ -3,9 +3,7 @@ html, body {
   padding: 0;
 }
 
-.App {
-  padding: 20px;;
-}
+
 
 nav.navbar { 
   display: flex;

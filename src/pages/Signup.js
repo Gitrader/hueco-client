@@ -1,124 +1,357 @@
-import React, { Component } from "react";
+import React, { Component, useState, useForm } from "react";
+
 import { Link } from "react-router-dom";
 import { withAuth } from './../lib/Auth';
-
-class Signup extends Component {
-  state = { 
+import 'antd/dist/antd.css';
+import {
+  Form,
+  Input,
+  Button,
   
-   business_name:"", 
-   email:"", 
-   password:"",
-   address:"",
-   city:"",
-   zip_code:"",
-   service:"",
-   phone_number:"",
-   image_url:"",
-   description:"",
-  //  coordinates:""
+} from 'antd';
+
+import { QuestionCircleOutlined } from '@ant-design/icons';
+
+const formItemLayout = {
+  labelCol: {
+    xs: {
+      span: 24,
+    },
+    sm: {
+      span: 8,
+    },
+  },
+  wrapperCol: {
+    xs: {
+      span: 24,
+    },
+    sm: {
+      span: 16,
+    },
+  },
+};
+
+const tailFormItemLayout = {
+  wrapperCol: {
+    xs: {
+      span: 24,
+      offset: 0,
+    },
+    sm: {
+      span: 16,
+      offset: 8,
+    },
+  },
+};
+
+const RegistrationForm = (props) => {
+  const [form] = Form.useForm();
+
+  const onFinish = values => {
+    console.log('Received values of form: ', values);
+    const {business_name,email,password,address,city,zip_code,service, phone_number, description}=values
+    props.signup(business_name,email,password,address,city,zip_code,service, phone_number, description)
   };
+
+  const { errorMessage } = props;
+
+// class Signup extends Component {
+//   state = { 
+//   form:null,
+//    business_name:"", 
+//    email:"", 
+//    password:"",
+//    address:"",
+//    city:"",
+//    zip_code:"",
+//    service:"",
+//    phone_number:"",
+//    image_url:"",
+//    description:"",
+//   //  coordinates:""
+//   };
 
   
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    console.log("state",this.state)
-    const {
-      business_name, 
-      email, 
-      password,
-      address,
-      city,
-      zip_code,
-      service,
-      phone_number,
-      image_url,
-      description
-      } = this.state;
+//   handleFormSubmit = event => {
+//     event.preventDefault();
+//     console.log("state",this.state)
+//     const {
+    
+//       business_name, 
+//       email, 
+//       password,
+//       address,
+//       city,
+//       zip_code,
+//       service,
+//       phone_number,
+//       image_url,
+//       description
+//       } = this.state;
 
-    this.props.signup(
-      business_name, 
-      email, 
-      password,
-      address,
-      city,
-      zip_code,
-      service,
-      phone_number,
-      image_url,
-      description
-      );
-    // this.props.signup method is coming from the AuthProvider
-    // injected by the withAuth() HOC
-  };
+//     this.props.signup(
+//       business_name, 
+//       email, 
+//       password,
+//       address,
+//       city,
+//       zip_code,
+//       service,
+//       phone_number,
+//       image_url,
+//       description
+//       );
+//     // this.props.signup method is coming from the AuthProvider
+//     // injected by the withAuth() HOC
+//   };
 
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
+  
+  
+  
+  
+  
+  
+    
 
-  render() {
-    const { business_name, 
-      email, 
-      password,
-      address,
-      city,
-      zip_code,
-      service,
-      phone_number,
-      image_url,
-      description
-      } = this.state;
-    return (
+//   handleChange = event => {
+//     const { name, value } = event.target;
+//     this.setState({ [name]: value });
+//   };
+
+//   render() {
+//     const { 
+//       form,
+//       business_name, 
+//       email, 
+//       password,
+//       address,
+//       city,
+//       zip_code,
+//       service,
+//       phone_number,
+//       image_url,
+//       description
+//       } = this.state;
+
+      
+
+//         // const prefixSelector = (
+//         //   <Form.Item name="prefix" noStyle>
+//         //     <Select
+//         //       style={{
+//         //         width: 70,
+//         //       }}
+//         //     >
+//         //       <Option value="86">+86</Option>
+//         //       <Option value="87">+87</Option>
+//         //     </Select>
+//         //   </Form.Item>
+//         // );
+
+      
+    
+      return (
       <div>
         <h1>Sign Up</h1>
 
-        <form onSubmit={this.handleFormSubmit}>
+        <Form
+      {...formItemLayout}
+      form={form}
+      name="register"
+      // onSubmit={this.handleFormSubmit}
+      onFinish={onFinish}
+      
+      scrollToFirstError
+    >
+      <Form.Item
+        name="email"
+        label="E-mail"
+        // value={email} 
+        // onChange={this.handleChange}
+        rules={[
+          {
+            type: 'email',
+            message: 'The input is not valid E-mail!',
+          },
+          {
+            required: true,
+            message: 'Please input your E-mail!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
 
-          <label>Business name:</label>
-          <input type="text" name="business_name" value={business_name} onChange={this.handleChange} />
-
-          <label>email:</label>
-          <input type="email" name="email" value={email} onChange={this.handleChange} />
-
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
-
-          <label>Phone number:</label>
-          <input type="text" name="phone_number" value={phone_number} onChange={this.handleChange} />
-
-          <label>Address:</label>
-          <input type="text" name="address" value={address} onChange={this.handleChange} />
-
-          <label>city:</label>
-          <input type="text" name="city" value={city} onChange={this.handleChange} />
-
-          <label>zip code:</label>
-          <input type="text" name="zip_code" value={zip_code} onChange={this.handleChange} />
-
-          {/* !!!!!!!CLOUDINARY !!!!!!! */}
-
-          <label>Picture of your business:</label>
-          <input type="file" name="image_url" value={image_url} onChange={this.handleChange} />    
-
-          <label>What kind of service are you offering?</label>
-          <input type="text" name="service" value={service} onChange={this.handleChange} />
-
-          <label>Description of your business:</label>
-          <input type="text" name="description" value={description} onChange={this.handleChange} />
+      
+      <Form.Item
+        name="password"
+        label="Password"
+        // value={password} 
+        // onChange={this.handleChange}
+        rules={[
+          {
+            required: true,
+            message: 'Please input your password!',
+          },
+        ]}
+        hasFeedback
+      >
+        <Input.Password />
+      </Form.Item>
 
 
+      <Form.Item
+        name="business_name"
+        label="Business name"
+        // value={business_name} 
+        // onChange={this.handleChange}
+        rules={[
+          {
+            required: true,
+            message: 'Please input your business name',
+            whitespace: true,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
 
-          
+      {/* <Form.Item
+        name="image_url"
+        label="Picture of your business"
+        value={image_url} 
+        onChange={this.handleChange}
+        rules={[
+          {
+            type: 'file',
+            message: 'The image is not valid!',
+          },
+          // {
+          //   required: true,
+          //   message: 'Please input your E-mail!',
+          // },
+        ]}
+      >
+        <Input />
+      </Form.Item> */}
 
-          <input type="submit" value="Signup" />
-        </form>
+
+      <Form.Item
+        name="address"
+        label="Business address"
+        // value={address} 
+        // onChange={this.handleChange}
+        rules={[
+          {
+            
+            required: true,
+            message: 'Please select your business address!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        name="zip_code"
+        label="Zip Code"
+        // value={zip_code} 
+        // onChange={this.handleChange}
+        rules={[
+          {
+            
+            required: true,
+            message: 'Please select your zip code!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        name="city"
+        label="City"
+        // value={city} 
+        // onChange={this.handleChange}
+        rules={[
+          {
+            
+            required: true,
+            message: 'Please select your city!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        name="phone_number"
+        label="Phone Number"
+        // value={phone_number} 
+        // onChange={this.handleChange}
+        rules={[
+          {
+            required: true,
+            message: 'Please input your phone number!',
+          },
+        ]}
+      >
+        <Input
+          // addonBefore={prefixSelector}
+          // style={{
+          //   width: '100%',
+          // }}
+        />
+      </Form.Item>
+
+      <Form.Item
+        name="service"
+        label="What kind of service are you offering?"
+        // value={service} 
+        // onChange={this.handleChange}
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+
+      <Form.Item 
+      name="description" 
+      label="Description of your business"
+      // value={description} 
+      //   onChange={this.handleChange}
+        >
+        <Input.TextArea 
+         />
+      </Form.Item>
+
+      
+
+      <Form.Item {...tailFormItemLayout}>
+        <Button type="primary" htmlType="submit" >
+          Register
+        </Button>
+      </Form.Item>
+    </Form>
 
         <p>Already have account?</p>
         <Link to={"/login"}> Login</Link>
-      </div>
-    );
-  }
-}
 
-export default withAuth(Signup);
+      </div>
+      );
+    }
+  
+
+
+export default withAuth(RegistrationForm);
+
+
+
+
+
+// ReactDOM.render(<RegistrationForm />, document.getElementById('container'));

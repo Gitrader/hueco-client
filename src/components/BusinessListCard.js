@@ -60,6 +60,7 @@ return nextState !== this.state
             {businesses?
                 businesses.map((business) => {
                    return( 
+                    <div class="col-7">
                     <div class="card" style={{"width": "18rem"}}>
                   <h2 class="card-title">{business.business_name}</h2>
                   <img src={business.image_url} class="card-img-top" alt="img-business"/>
@@ -67,6 +68,7 @@ return nextState !== this.state
                   <h2>{selectedBusiness.properties.SERVICE}</h2> */}
                   <p class="card-text">{business.service}</p>
                   {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
+                </div> 
                 </div> 
               
               
