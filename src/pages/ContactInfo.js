@@ -11,6 +11,7 @@ import {
   Steps
   
 } from 'antd';
+import "./ContactInfo.css"
 
 
 
@@ -44,13 +45,14 @@ const ContactInfo = (props) => {
     
       return (
 
-        <div>
-        <Steps current={0}>
+        <div className="contact">
+        <div className="step">
+        <Steps current={0} >
     <Step title="Contact Information" description="In progress" />
     <Step title="Secure your hueco" subTitle="" description="Next Step" />
     <Step title="Waiting" description="Hueco confirmation" />
   </Steps>
-      
+  </div>
   
     <Form
       {...layout}
@@ -72,7 +74,7 @@ const ContactInfo = (props) => {
           },
         ]}
       >
-        <Input />
+        <Input className="input"/>
       </Form.Item>
 
       <Form.Item
@@ -85,7 +87,7 @@ const ContactInfo = (props) => {
           },
         ]}
       >
-        <Input />
+        <Input className="input" />
       </Form.Item>
 
 
@@ -100,7 +102,7 @@ const ContactInfo = (props) => {
           },
         ]}
       >
-        <Input />
+        <Input className="input"/>
       </Form.Item>
 
 

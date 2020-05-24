@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import React, { Component } from "react";
 import { withAuth } from './../lib/Auth';
 import { Form, Input, Button, Checkbox } from 'antd';
+import "./Login.css"
 
 const layout = {
   labelCol: {
@@ -31,7 +32,7 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <div className="form-ant">
     <Form
       {...layout}
       name="basic"
@@ -52,7 +53,7 @@ const Login = (props) => {
           },
         ]}
       >
-        <Input />
+        <Input className="input"/>
       </Form.Item>
 
       <Form.Item
@@ -65,7 +66,7 @@ const Login = (props) => {
           },
         ]}
       >
-        <Input.Password />
+        <Input.Password className="input" />
       </Form.Item>
 
       <Form.Item {...tailLayout} name="remember" valuePropName="checked">

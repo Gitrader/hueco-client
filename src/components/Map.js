@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import businessService from "./../lib/business-service";
 import "./Map.css"
 // import data from "./../data.json";
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 
 export default class Map extends Component {

@@ -1,7 +1,7 @@
 import React, { Component} from "react";
 import { Link } from 'react-router-dom';
 import businessService from "./../lib/business-service";
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Map from "./../components/Map"
 import BusinessListCard from "./../components/BusinessListCard"
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 function Home() {
   return (

@@ -9,7 +9,7 @@ import {
   Button,
   
 } from 'antd';
-
+import "./Signup.css"
 import { QuestionCircleOutlined } from '@ant-design/icons';
 
 const formItemLayout = {
@@ -152,8 +152,8 @@ const RegistrationForm = (props) => {
       
     
       return (
-      <div>
-        <h1>Sign Up</h1>
+      <div className="form-ant">
+        {/* <h1>Sign Up</h1> */}
 
         <Form
       {...formItemLayout}
@@ -180,7 +180,7 @@ const RegistrationForm = (props) => {
           },
         ]}
       >
-        <Input />
+        <Input className="input"/>
       </Form.Item>
 
       
@@ -197,7 +197,7 @@ const RegistrationForm = (props) => {
         ]}
         hasFeedback
       >
-        <Input.Password />
+        <Input.Password className="input" />
       </Form.Item>
 
 
@@ -214,7 +214,7 @@ const RegistrationForm = (props) => {
           },
         ]}
       >
-        <Input />
+        <Input className="input" />
       </Form.Item>
 
       {/* <Form.Item
@@ -229,7 +229,7 @@ const RegistrationForm = (props) => {
           },
           // {
           //   required: true,
-          //   message: 'Please input your E-mail!',
+          //   message: 'Please  className="input" your E-mail!',
           // },
         ]}
       >
@@ -250,7 +250,7 @@ const RegistrationForm = (props) => {
           },
         ]}
       >
-        <Input />
+        <Input className="input"/>
       </Form.Item>
 
       <Form.Item
@@ -266,7 +266,7 @@ const RegistrationForm = (props) => {
           },
         ]}
       >
-        <Input />
+        <Input className="input"/>
       </Form.Item>
 
       <Form.Item
@@ -282,7 +282,7 @@ const RegistrationForm = (props) => {
           },
         ]}
       >
-        <Input />
+        <Input className="input"/>
       </Form.Item>
 
       <Form.Item
@@ -302,7 +302,7 @@ const RegistrationForm = (props) => {
           // style={{
           //   width: '100%',
           // }}
-        />
+          className="input"/>
       </Form.Item>
 
       <Form.Item
@@ -316,7 +316,7 @@ const RegistrationForm = (props) => {
           },
         ]}
       >
-        <Input />
+        <Input className="input"/>
       </Form.Item>
 
 
@@ -327,7 +327,7 @@ const RegistrationForm = (props) => {
       //   onChange={this.handleChange}
         >
         <Input.TextArea 
-         />
+         className="input"/>
       </Form.Item>
 
       
@@ -339,9 +339,10 @@ const RegistrationForm = (props) => {
       </Form.Item>
     </Form>
 
-        <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
-
+<div className="registered">
+        <p >Already have account?</p>
+        <Link to={"/login"} className="link"> Login here</Link>
+</div>
       </div>
       );
     }
