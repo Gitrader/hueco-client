@@ -10,20 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export default class BusinessListCard extends Component {
   state = {
-    viewport: {
-      width: "100vh",
-      height: "100vh",
-      latitude: 41.3851,
-      longitude: 2.1734,
-      zoom: 10,
-      selectedBusiness: null,
-      setSelectedBusiness: null,
-      selectedBusinessVisible: false,
-      pinVisible: false,
-      
-    //   data: data,
-    },
-    userLocation: {},
+    
     businesses:[],
     selectedBusiness: null,
   };
@@ -49,7 +36,7 @@ return nextState !== this.state
 
   render() {
     const {businesses}=this.state
-    const {selectedBusiness}=this.state
+    // const {selectedBusiness}=this.state
       return (
         <div>
         
@@ -75,7 +62,9 @@ return nextState !== this.state
                    )
             }):null}
   
-           
+            <Link to="/">
+                                    <button className="">Go Back</button>
+                                </Link>
         </div>
       );
     }

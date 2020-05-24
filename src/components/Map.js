@@ -72,8 +72,14 @@ return nextState !== this.state
     });
   };
 
+  // renderBusinessDetailsPage= (id) => {
+  //   const { _id } = this.state.selectedBusiness;
+  //   return <Link  to={`/businesses/${_id}`} ></Link>;
+  // } 
+
   render() {
-      
+      console.log("this.state.selectedBusienss",this.state.selectedBusiness)
+    // const { _id } = this.state.selectedBusiness;
     const {
         latitude,
         longitude,
@@ -143,12 +149,14 @@ return nextState !== this.state
                   this.setSelectedBusiness(null);
                 }}
               >
+              {/* <Link  to={`/businesses/${_id}`} > */}
                 <div>
                   <h2>{selectedBusiness.business_name}</h2>
                   <img src={selectedBusiness.image_url} alt="img-business"/>
                   {/* <h2>{selectedBusiness.type}</h2>
                   <h2>{selectedBusiness.properties.SERVICE}</h2> */}
                 </div>
+                {/* </Link> */}
               </Popup>
             ) : null}
           </ReactMapGL>

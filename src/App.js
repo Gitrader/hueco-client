@@ -11,6 +11,8 @@ import Private from './pages/Private';
 import PublicRoute from './components/PublicRoute';
 import PrivateRoute from './components/PrivateRoute';
 import MyHueco from './pages/MyHueco';
+import BusinessDetails from './pages/BusinessDetails';
+import ContactInfo from './pages/ContactInfo';
 
 
 
@@ -25,6 +27,8 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <PublicRoute exact path="/signup" component={Signup} />
           <PublicRoute exact path="/login" component={Login} />
+          <PublicRoute exact path="/:businessId" component={BusinessDetails} />
+          <PublicRoute exact path="/booking/contact-info" component={ContactInfo} />
           <PrivateRoute exact path="/private" component={MyHueco} />
         </Switch>
       </div>

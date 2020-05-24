@@ -16,6 +16,12 @@ getAllBusinesses(){
     .then(({ data }) => data);
 }
 
+  
+  getOneBusinessById(id) {
+    return this.business
+              .get(`/businesses/${id}`)
+              .then(({ data }) => data);
+  }
 
 getBusiness() {
 return this.business
