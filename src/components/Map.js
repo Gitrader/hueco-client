@@ -3,6 +3,14 @@ import ReactMapGL, { Marker, Popup, GeolocateControl, NavigationControl } from "
 import { Link } from 'react-router-dom';
 import businessService from "./../lib/business-service";
 import "./Map.css"
+import 'antd/dist/antd.css';
+import {
+  Form,
+  Input,
+  Button,
+  Steps
+  
+} from 'antd';
 // import data from "./../data.json";
 // import 'bootstrap/dist/css/bootstrap.css';
 
@@ -115,7 +123,7 @@ return nextState !== this.state
             <NavigationControl className="NavigationControl"/>
   
   
-            {/* {businesses?
+            {businesses?
                 businesses.map((business) => {
                    return( 
                        
@@ -139,9 +147,11 @@ return nextState !== this.state
               </Marker>
               
                    )
-            }):null} */}
+            }):null}
   
             {selectedBusiness ? (
+              <div>
+              
               <Popup className="popup"
                 latitude={selectedBusiness.coordinates[1]}
                 longitude={selectedBusiness.coordinates[0]}
@@ -149,15 +159,26 @@ return nextState !== this.state
                   this.setSelectedBusiness(null);
                 }}
               >
-              {/* <Link  to={`/businesses/${_id}`} > */}
+             
                 <div>
+                
                   <h2>{selectedBusiness.business_name}</h2>
                   <img src={selectedBusiness.image_url} alt="img-business"/>
+                  <Link to={`/businesses/${selectedBusiness._id}`}>
+                  <Button >
+                  
+                  GO
+                  
+                  </Button>
+                  </Link>
                   {/* <h2>{selectedBusiness.type}</h2>
                   <h2>{selectedBusiness.properties.SERVICE}</h2> */}
+                  
                 </div>
-                {/* </Link> */}
+                
               </Popup>
+              
+              </div>
             ) : null}
           </ReactMapGL>
         </div>

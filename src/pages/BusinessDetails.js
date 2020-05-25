@@ -11,18 +11,18 @@ import businessService from "./../lib/business-service";
 export default class BusinessDetails extends Component {
   state = {
     
-    businesses:[],
+    business:null,
     
   };
 
   componentDidMount() {
-    const { id } = this.props.match.params;
+    const { businessId } = this.props.match.params;
     
       businessService
-      . getOneBusinessById(id)
-      .then((businesses)=> {
-          console.log("businesses",businesses)
-        this.setState({ businesses })
+      .getOneBusinessById(businessId)
+      .then((business)=> {
+          console.log("businesses",business)
+        this.setState({ business })
         
       })
       .catch( (err) => console.log(err));
@@ -38,7 +38,7 @@ return nextState !== this.state
   
 
   render() {
-    const {businesses}=this.state
+    const {business}=this.state
     // const {selectedBusiness}=this.state
       return (
         <div>
@@ -47,9 +47,9 @@ return nextState !== this.state
       
       
   
-            {businesses?
-                businesses.map((business) => {
-                   return( 
+            {business?
+                
+                   
                     <div>
                   
                   <img src={business.image_url}  alt="img-business"/>
@@ -78,13 +78,11 @@ return nextState !== this.state
                  </div>
               
               
-                   )
-            }):null}
+                   
+            :null}
   
            
         </div>
       );
     }
-}
-
-
+  }
