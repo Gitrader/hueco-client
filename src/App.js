@@ -16,6 +16,7 @@ import MyHueco from './pages/MyHueco'
 import QRCode from "./pages/QRCode"
 import AddHueco from "./pages/AddHueco"
 import EditHueco from "./pages/EditHueco"
+import BusinessDetails from  "./pages/BusinessDetails"
 
 
 
@@ -31,6 +32,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <PublicRoute exact path="/signup" component={Signup} />
           <PublicRoute exact path="/login" component={Login} />
+          <PublicRoute exact path="/businesses/:businessId" component={BusinessDetails} />
           <PublicRoute exact path="/booking/contact-info" component={ContactInfo} />
           <PublicRoute exact path="/booking/:bookingId/payment-information" component={Payment} />
           <PublicRoute exact path="/booking/:bookingId" component={QRCode} />

@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import businessService from "./../lib/business-service";
 // import 'bootstrap/dist/css/bootstrap.css';
 
+import 'antd/dist/antd.css';
+
+import { Card, Col, Row } from 'antd';
+
 
 
 
@@ -37,38 +41,37 @@ return nextState !== this.state
   render() {
     const {businesses}=this.state
     // const {selectedBusiness}=this.state
+    const { Meta } = Card;
       return (
         <div>
-        
-      
-      
-      
   
             {businesses?
                 businesses.map((business) => {
                    return( 
-                    <div class="col-7">
-                    <div class="card" style={{"width": "18rem"}}>
-                  <h2 class="card-title">{business.business_name}</h2>
-                  <img src={business.image_url} class="card-img-top" alt="img-business"/>
-                  {/* <h2>{selectedBusiness.type}</h2>
-                  <h2>{selectedBusiness.properties.SERVICE}</h2> */}
-                  <p class="card-text">{business.service}</p>
-                  {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                </div> 
-                </div> 
-              
-              
-                   )
-            }):null}
+                     <div className="business-card">
+                     <Col>
+<Row span={12}></Row>
+                        <Card
+                            hoverable
+                            style={{ width: 240 }}
+                            cover={<img alt="business-img" src={business.image_url} />}
+                          >
+                            <Meta title={business.business_name} description={business.service} />
+                        </Card>
+                        </Col>
+                    </div>
+                        )
+                    })
+                    :null}
   
   
-            <Link to="/">
+            {/* <Link to="/">
                                     <button className="">Go Back</button>
-                                </Link>
+                                </Link> */}
         </div>
       );
     }
 }
+
 
 
