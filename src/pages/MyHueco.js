@@ -3,11 +3,14 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from './../lib/Auth';
 import "./MyHueco.css"
+import { Empty,Button } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 
 class MyHueco extends Component {
   state = { 
   
    availability:[], 
+   isEmpty:false,
   
   
   };
@@ -38,7 +41,19 @@ class MyHueco extends Component {
       <div className="huecos">
         <h1>My Huecos</h1>
 
-        <form onSubmit={this.handleFormSubmit}>
+          {this.state.isEmpty?(
+            null
+          ):
+            <div className="add-hueco">
+          <Empty/> 
+          <Button type="primary" icon={<PlusOutlined />}>
+      Add a hueco
+    </Button>
+    </div>
+    }
+
+
+        {/* <form onSubmit={this.handleFormSubmit}>
 
           <label>Hueco 1:</label>
           <input type="text" name="hueco1" value={availability[0]} onChange={this.handleChange} />
@@ -58,7 +73,7 @@ class MyHueco extends Component {
           
 
           <input type="submit" value="myHuecos" />
-        </form>
+        </form> */}
 
         
       </div>
