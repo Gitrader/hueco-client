@@ -62,6 +62,7 @@ return nextState !== this.state
                    )
             }):null}
   
+  
             <Link to="/">
                                     <button className="">Go Back</button>
                                 </Link>
