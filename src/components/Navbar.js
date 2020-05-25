@@ -56,7 +56,13 @@ class Navbar extends Component {
         Home
         </Link>
         </Menu.Item>
-        <Menu.Item key="5">{business.email}</Menu.Item>
+       
+        <Menu.Item key="4">
+        <Link to={"/private"}>
+        My Huecos
+        </Link>
+        </Menu.Item>
+        <Menu.Item key="5">You are logged in as {business.business_name}</Menu.Item>
         <Menu.Item key="6">
         <Link onClick={logout}>
         Log out

@@ -15,6 +15,7 @@ class MyHueco extends Component {
   
   };
 
+ 
   
 
   handleFormSubmit = event => {
@@ -47,7 +48,7 @@ class MyHueco extends Component {
             <div className="add-hueco">
           <Empty/> 
           <Button type="primary" icon={<PlusOutlined />}>
-          <Link to={"/businesses/:businessId/add-hueco"}>
+          <Link to={"/businesses/:businessId/add-hueco"} className="link-hueco">
       Add a hueco
       </Link>
     </Button>
