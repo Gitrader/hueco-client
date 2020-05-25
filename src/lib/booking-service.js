@@ -36,7 +36,7 @@ class Booking {
   bookingUserPaymentInfo(creditCardObj) 
   {
   return this.booking
-    .put("booking/:bookingId/payment-information",  creditCardObj)
+    .put("/booking/:bookingId/payment-information",  creditCardObj)
     .then(({ data }) => data);
   // .then((response) => response.data);
 }

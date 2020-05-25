@@ -10,10 +10,9 @@ import Private from './pages/Private';
 
 import PublicRoute from './components/PublicRoute';
 import PrivateRoute from './components/PrivateRoute';
-import MyHueco from './pages/MyHueco';
-import BusinessDetails from './pages/BusinessDetails';
-import ContactInfo from './pages/ContactInfo';
-import Payment from './pages/Payment';
+import ContactInfo from './pages/ContactInfo'
+import Payment from './pages/Payment'
+import MyHueco from './pages/MyHueco'
 
 
 
@@ -28,9 +27,8 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <PublicRoute exact path="/signup" component={Signup} />
           <PublicRoute exact path="/login" component={Login} />
-          <PublicRoute exact path="/:businessId" component={BusinessDetails} />
           <PublicRoute exact path="/booking/contact-info" component={ContactInfo} />
-          <PublicRoute exact path="/booking/payment-information" component={Payment} />
+          <PublicRoute exact path="/booking/:bookingId/payment-information" component={Payment} />
           <PrivateRoute exact path="/private" component={MyHueco} />
         </Switch>
       </div>

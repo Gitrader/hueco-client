@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from './../lib/Auth';
+import "./MyHueco.css"
 
 class MyHueco extends Component {
   state = { 
@@ -34,7 +35,7 @@ class MyHueco extends Component {
   render() {
     const { availability} = this.state;
     return (
-      <div>
+      <div className="huecos">
         <h1>My Huecos</h1>
 
         <form onSubmit={this.handleFormSubmit}>
