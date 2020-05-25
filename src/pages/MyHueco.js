@@ -47,7 +47,9 @@ class MyHueco extends Component {
             <div className="add-hueco">
           <Empty/> 
           <Button type="primary" icon={<PlusOutlined />}>
+          <Link to={"/businesses/:businessId/add-hueco"}>
       Add a hueco
+      </Link>
     </Button>
     </div>
     }

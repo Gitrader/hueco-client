@@ -13,6 +13,10 @@ import PrivateRoute from './components/PrivateRoute';
 import ContactInfo from './pages/ContactInfo'
 import Payment from './pages/Payment'
 import MyHueco from './pages/MyHueco'
+import QRCode from "./pages/QRCode"
+import AddHueco from "./pages/AddHueco"
+import EditHueco from "./pages/EditHueco"
+
 
 
 
@@ -29,7 +33,11 @@ class App extends Component {
           <PublicRoute exact path="/login" component={Login} />
           <PublicRoute exact path="/booking/contact-info" component={ContactInfo} />
           <PublicRoute exact path="/booking/:bookingId/payment-information" component={Payment} />
+          <PublicRoute exact path="/booking/:bookingId" component={QRCode} />
+
           <PrivateRoute exact path="/private" component={MyHueco} />
+          <PrivateRoute exact path="/businesses/:businessId/add-hueco" component={AddHueco} />
+          <PrivateRoute exact path="/businesses/:businessId/edit-hueco" component={EditHueco} />
         </Switch>
       </div>
     );
@@ -37,3 +45,5 @@ class App extends Component {
 }
 
 export default App;
+
+
