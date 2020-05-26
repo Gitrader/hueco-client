@@ -12,7 +12,13 @@ import {
 
 
 class Payment extends Component {
-  state = { cardholder_name: "", card_number: "" , expiration_date:"",  cv_code:""};
+  state = { 
+    
+    cardholder_name: "",
+    card_number: "" , 
+    expiration_date:"",  
+    cv_code:""
+  };
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -49,13 +55,13 @@ class Payment extends Component {
  
   <div className="form-body">
     
-  <input type="text" className="card-number" placeholder="Cardholder Name" value={cardholder_name} onChange={this.handleChange}/>
-    <input type="text" className="card-number" placeholder="Card Number" value={card_number} onChange={this.handleChange}/>
+  <input type="text" name="cardholder_name" className="card-number" placeholder="Cardholder Name" value={cardholder_name} onChange={this.handleChange}/>
+    <input type="text" name="card_number" className="card-number" placeholder="Card Number" value={card_number} onChange={this.handleChange}/>
  
    
     <div className="date-field">
       <div className="month">
-      <input type="text" className="card-number" placeholder="MM/YY" value={expiration_date} onChange={this.handleChange}/>
+      <input type="text" className="card-number" name="expiration_date" placeholder="MM/YY" value={expiration_date} onChange={this.handleChange}/>
         {/* <select name="Month">
         <option value="month" selected >Month</option>
           <option value="january">January</option>
@@ -73,7 +79,7 @@ class Payment extends Component {
         </select> */}
       </div>
       <div className="year">
-      <input type="text" className="card-number" placeholder="CVV" value={cv_code} onChange={this.handleChange}/>
+      <input type="text" className="card-number" placeholder="CVV" name="cv_code" value={cv_code} onChange={this.handleChange}/>
         {/* <select name="Year">
         <option value="year" selected >Year</option>
           <option value="2020">2020</option>
@@ -96,7 +102,7 @@ class Payment extends Component {
     {/* </div> */}
  
     
-    <button type="submit" className="proceed-btn">Proceed</button>
+    <button type="submit" className="proceed-btn" value="Submit">Proceed</button>
     
   </div>
 </form>

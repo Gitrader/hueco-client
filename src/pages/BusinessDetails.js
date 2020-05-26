@@ -2,6 +2,7 @@ import React, { Component} from "react";
 import { Link } from 'react-router-dom';
 import businessService from "./../lib/business-service";
 // import 'bootstrap/dist/css/bootstrap.css';
+import './BusinessDetails.css'
 
 
 
@@ -50,32 +51,44 @@ return nextState !== this.state
             {business?
                 
                    
-                    <div>
-                  
+                    <section  className="details">
+                    <h2 >{business.business_name}</h2>
                   <img src={business.image_url}  alt="img-business"/>
-                  <h2 >{business.business_name}</h2>
+                  
                   {/* <h2>{selectedBusiness.type}</h2>
                   <h2>{selectedBusiness.properties.SERVICE}</h2> */}
+                  <div className="address">
+                    <address>
+                      <p >{business.address}</p>
+                      <p >{business.zip_code}</p>
+                      <p >{business.city}</p>
+                    </address>
                   
-                  <p >{business.address}</p>
-                  <p >{business.zip_code}</p>
-                  <p >{business.city}</p>
-                  <p >{business.phone_number}</p>
-                  <p >{business.description}</p>
-                  <p >{business.service}</p>
-                  <p >{business.discount}</p>
-                  <p >{business.initial_price}</p>
-                  <p >{business.discount_price}</p>
-                  <p >{business.description}</p>
-                  <p >{business.availability}</p>
 
+                  <p > Phone number: {business.phone_number}</p>
+                  
+                  <p >Service offered: {business.service}</p>
+                  <p >Discount: -{business.discount}%</p>
+                  <p >Initial price: {business.initial_price}€</p>
+                  <p >Hueco's price: {business.discounted_price}€</p>
+                  <p >Description of the service: {business.description}</p>
+                  <p >Available huecos:<ul> {
+                    business.availability.map(hueco=>{
+                   return(
+                     
+                       <li>{hueco.timeSlot}</li>
+                     
+                    )})}
+                    </ul>
+                   </p>
+</div>
 
 
 
 
 
                   {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                 </div>
+                 </section>
               
               
                    

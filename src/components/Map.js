@@ -106,6 +106,7 @@ return nextState !== this.state
           <div class="col-5" >
 
           <ReactMapGL
+          className="map"
             {...this.state.viewport}
             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
             mapStyle="mapbox://styles/granx02/cka9kifn53jh71jo248opf5q4"

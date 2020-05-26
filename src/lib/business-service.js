@@ -32,7 +32,8 @@ return this.business
 
 
 ///route : businesses/:businessId/add-hueco
-addAHueco(id,{timeSlot}){
+addAHueco(id,timeSlot){
+  console.log("id", id, "timeSlot", timeSlot)
 return this.business
 .put(`/businesses/${id}/add-hueco`,{timeSlot})
 .then(({ data }) => data);

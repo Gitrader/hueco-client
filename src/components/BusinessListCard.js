@@ -39,7 +39,9 @@ return nextState !== this.state
   
 
   render() {
+    console.log("business list card seletected business",this.state.selectedBusiness)
     const {businesses}=this.state
+    const {selectedBusiness}=this.state
     // const {selectedBusiness}=this.state
     const { Meta } = Card;
       return (
@@ -49,8 +51,12 @@ return nextState !== this.state
                 businesses.map((business) => {
                    return( 
                      <div className="business-card">
-                     <Col>
-<Row span={12}></Row>
+                 {/* //////////////////////// LINK TO SELECTED BUSINESS ////////////////     */}
+                     <Link to={`/businesses/${business._id}`}>
+                    
+                     
+      
+    
                         <Card
                             hoverable
                             style={{ width: 240 }}
@@ -58,7 +64,9 @@ return nextState !== this.state
                           >
                             <Meta title={business.business_name} description={business.service} />
                         </Card>
-                        </Col>
+                        
+                        </Link>
+                        
                     </div>
                         )
                     })

@@ -11,6 +11,7 @@ class MyHueco extends Component {
   state = { 
   
    availability:[], 
+
   
   
   
@@ -30,6 +31,7 @@ class MyHueco extends Component {
 componentDidMount () {
   console.log("businessID", this.props)
   const businessId=this.props.business._id
+  // const myHuecoId=this.props.timeSlot._id
   
   businessService
   .getOneBusinessById(businessId)
@@ -39,30 +41,20 @@ componentDidMount () {
     
   })
   .catch( (err) => console.log(err));
+  
+
+  // businessService
+  // .deleteById(businessId,myHuecoId)
+  // .then((business)=> {
+  //     console.log("businesses",business)
+  //   this.setState({ availability: business.availability})
+    
+  // })
+  // .catch( (err) => console.log(err));
 
 }
 
-
-
-
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    console.log("state",this.state)
-    const {
-      availability
-      } = this.state;
-
-    this.props.myHueco(
-     availability
-      );
-   
-  };
-
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
+ 
 
   render() {
     console.log("availability", this.state.availability)
@@ -71,14 +63,24 @@ componentDidMount () {
       <div className="huecos">
         <h1>My Huecos</h1>
 
-          {this.state.availability.length>0?(
-            this.state.availability.map
-            ((availability) => {
-                   return(<div>
+          {availability.length>0?(
+            <div>
+            {availability.map
+              ((availability) => {
+                  return (<div>
                      <p>{availability.timeSlot}</p>
+                    
+                     {/* <Link to={`/businesses/${this.props.business._id}/delete/${this.props.business.availability.timeSlot._id}`}>
+                     <Button>Delete</Button>
+                     </Link> */}
                     {/* button pour ajouter un autre hueco */}
                    </div>
-          )})):(
+              )})} 
+          <Button type="primary" icon={<PlusOutlined />}>
+          <Link to={`/businesses/${this.props.business._id}/add-hueco`} className="link-hueco">
+      Add a hueco
+      </Link>
+    </Button></div>):(
             <div className="add-hueco">
           <Empty/> 
           <Button type="primary" icon={<PlusOutlined />}>
