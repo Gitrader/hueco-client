@@ -18,7 +18,7 @@ class Booking {
     }) 
     {
     return this.booking
-      .post("/booking/contact-info", { 
+      .post("/api/booking/contact-info", { 
           first_name,
           last_name,
           email,
@@ -36,7 +36,7 @@ class Booking {
   bookingUserPaymentInfo(creditCardObj) 
   {
   return this.booking
-    .put("/booking/:bookingId/payment-information",  creditCardObj)
+    .put("/api/booking/:bookingId/payment-information",  creditCardObj)
     .then(({ data }) => data);
   // .then((response) => response.data);
 }
@@ -45,7 +45,7 @@ class Booking {
 // Route /booking/:bookingId
 getBooking(id) {
     return this.business
-    .get(`/booking/${id}`)
+    .get(`/api/booking/${id}`)
     .then(({ data }) => data);
     // return this.auth.get("/auth/me").then((response) => response.data);
     }

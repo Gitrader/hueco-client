@@ -12,14 +12,14 @@ class Business {
 
 getAllBusinesses(){
     return this.business
-    .get("/businesses")
+    .get("/api/businesses")
     .then(({ data }) => data);
 }
 
   
   getOneBusinessById(id) {
     return this.business
-              .get(`/businesses/${id}`)
+              .get(`/api/businesses/${id}`)
               .then(({ data }) => data);
   }
 
@@ -35,7 +35,7 @@ return this.business
 addAHueco(id,timeSlot){
   console.log("id", id, "timeSlot", timeSlot)
 return this.business
-.put(`/businesses/${id}/add-hueco`,{timeSlot})
+.put(`/api/businesses/${id}/add-hueco`,{timeSlot})
 .then(({ data }) => data);
 }
 
@@ -43,14 +43,14 @@ return this.business
 //Route : businesses/:businessId/edit/:myHuecoId
 editHueco(id,body){
     return this.business
-    .put(`/businesses/${id}/edit/:myhuecoId`,body)
+    .put(`/api/businesses/${id}/edit/:myhuecoId`,body)
     .then(({ data }) => data);
 }
 
 // Route : /businesses/:businessId/delete/:myHuecoId
 deleteHueco(businessId,myHuecoId){
 return this.business
-.delete(`/businesses/${businessId}/delete/${myHuecoId}`)
+.delete(`/api/businesses/${businessId}/delete/${myHuecoId}`)
 .then(({ data }) => data);
 }
 

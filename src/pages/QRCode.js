@@ -45,14 +45,18 @@ class QRCode extends Component {
     <Step title="Secure your hueco" subTitle="" description="Done" />
     <Step title="Booking Confirmed!" description="Hueco confirmation" />
   </Steps>
+  {/* <img src="https://res.cloudinary.com/dksnrn8gi/image/upload/v1590510091/m3-project/qrcode_r6n6qv.png" alt="qrcode"/> */}
   </div>
   <Result
     status="success"
     title="Congratulations! Your Hueco Has Been Successfully Booked " 
     subTitle="Make sure your download your QR Code by clicking below on download!"
     /////////////////////// CHECK DOWNLOAD FILE////////////////////////////////
+    
+    
     extra={[
-      <a href="./../../public/933-9339671_laptop-mockup-placeholder-selling-global-on-amazon.png" download="test"><Button type="primary" key="console">
+      
+      <a href="./../components/image/qrcode.png" target="_blank" download="QRcode"><Button type="primary" key="console">
         Download My QR Code!
       </Button></a>,
       <Link to={"/"}>

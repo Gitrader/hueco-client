@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { withAuth } from './../lib/Auth';
+import { Link } from "react-router-dom";
 import "./Payment.css"
+import bookingService from "./../lib/booking-service"
 import 'antd/dist/antd.css';
 import {
     Form,
@@ -19,6 +21,30 @@ class Payment extends Component {
     expiration_date:"",  
     cv_code:""
   };
+
+  componentDidMount () {
+    console.log("businessID", this.props)
+    // const businessId=this.props.business._id
+    // const bookingId=this.props.booking._id
+    // const myHuecoId=this.props.timeSlot._id
+    
+                        // bookingService
+                        // .getBooking(bookingId)
+                        // .then((booking)=> {
+                        //     console.log("booking",booking)
+                        //   this.setState({ 
+                        //     cardholder_name:booking.cardholder_name,
+                        //     card_number: booking.card_number,
+                        //     expiration_date: booking.expiration_date,
+                        //     cv_code: booking.cv_code
+
+                        //   })
+                          
+                        // })
+                        // .catch( (err) => console.log(err));
+
+  }
+
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -62,48 +88,19 @@ class Payment extends Component {
     <div className="date-field">
       <div className="month">
       <input type="text" className="card-number" name="expiration_date" placeholder="MM/YY" value={expiration_date} onChange={this.handleChange}/>
-        {/* <select name="Month">
-        <option value="month" selected >Month</option>
-          <option value="january">January</option>
-          <option value="february">February</option>
-          <option value="march">March</option>
-          <option value="april">April</option>
-          <option value="may">May</option>
-          <option value="june">June</option>
-          <option value="july">July</option>
-          <option value="august">August</option>
-          <option value="september">September</option>
-          <option value="october">October</option>
-          <option value="november">November</option>
-          <option value="december">December</option>
-        </select> */}
+       
       </div>
       <div className="year">
       <input type="text" className="card-number" placeholder="CVV" name="cv_code" value={cv_code} onChange={this.handleChange}/>
-        {/* <select name="Year">
-        <option value="year" selected >Year</option>
-          <option value="2020">2020</option>
-          <option value="2021">2021</option>
-          <option value="2022">2022</option>
-          <option value="2023">2023</option>
-          <option value="2024">2024</option>
-        </select> */}
+      
       </div>
     </div>
  
-{/*     
-    <div className="year">
-      <div className="cvv-input">
-        <input type="text" placeholder="CVV"/>
-      </div>
-      <div className="cvv-details"> */}
-        
-      {/* </div> */}
-    {/* </div> */}
+
  
-    
+    {/* <Link to={`/booking/booking.${_id}`}> */}
     <button type="submit" className="proceed-btn" value="Submit">Proceed</button>
-    
+    {/* </Link> */}
   </div>
 </form>
    </div>

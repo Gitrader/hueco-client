@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import businessService from "./../lib/business-service";
 // import 'bootstrap/dist/css/bootstrap.css';
 import './BusinessDetails.css'
-
+import {Button} from 'antd';
 
 
 
@@ -75,9 +75,11 @@ return nextState !== this.state
                   <p >Available huecos:<ul> {
                     business.availability.map(hueco=>{
                    return(
-                     
-                       <li>{hueco.timeSlot}</li>
-                     
+                     <Link to={"/booking/contact-info"}>
+                     <Button>
+                       {hueco.timeSlot}
+                       </Button>
+                       </Link>
                     )})}
                     </ul>
                    </p>
