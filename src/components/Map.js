@@ -59,8 +59,8 @@ return nextState !== this.state
         long: position.coords.longitude,
       };
       let newViewport = {
-        height: "100vh",
-        width: "100vw",
+        height: "200vh",
+        width: "200vw",
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
         zoom: 10,
@@ -101,11 +101,14 @@ return nextState !== this.state
       const {selectedBusiness}=this.state
       const viewport = { latitude, longitude, width, height, zoom };
       return (
-        <div>
-        <div class="row">
-          <div class="col-5" >
+        <div className="test">
+        {/* <div class="row">
+          <div class="col-5" > */}
 
           <ReactMapGL
+          // style={{ position: 'fixed', zIndex: 1, width: '100%' }}
+        style={{ marginLeft:"45%" , position: 'fixed', zIndex: 1, width: '100%', marginTop:"0%",}}
+
           className="map"
             {...this.state.viewport}
             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -183,8 +186,8 @@ return nextState !== this.state
             ) : null}
           </ReactMapGL>
         </div>
-        </div>
-        </div>
+        // </div>
+        // </div>
       );
     }
 }

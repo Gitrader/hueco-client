@@ -9,23 +9,27 @@
     width: 5px;
     height: 5px;
     cursor: pointer;
+    
   }
   
   .marker-btn img {
     
     width: 25px;
     height: 25px;
+    
   }
   
   
   .popup {
     width:50%;
     height:25;
+    
     }
   
   .popup img{
   width:100%;
   height:100%;
+  
   }
   
   .current-location{
@@ -33,19 +37,25 @@
   background:none;
   border:none;
   
+  
   }
   
   .NavigationControl{
    position:absolute;
   right:1%;
   margin-top:7%;
+  
   }
   
   .GeolocateControl{
     position:absolute;
   right:1%;
   margin-top:1%;
+  
   }
   
+  .mapgl{
+    position:fixed;
+  }
  
  

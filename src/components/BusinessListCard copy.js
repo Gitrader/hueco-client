@@ -55,15 +55,20 @@ return nextState !== this.state
                      
               
                      <Link to={`/businesses/${business._id}`}>
-                     <div className="card">
-                        <img src={business.image_url} alt="Avatar" style={{"width":100}}/>
-                        <div className="container">
-                          <h4><b>{business.business_name}</b></h4> 
-                          <p>{business.service}</p> 
-                        </div>
-                      </div>
-                     
                     
+                     
+                    <div>
+                    <article className="container">
+                        <Card 
+                        className="card"
+                            hoverable
+                            style={{ width: 240 }}
+                            cover={<img alt="business-img" src={business.image_url} />}
+                          >
+                            <Meta title={business.business_name} description={business.service} />
+                        </Card>
+                        </article>
+                        </div>
                         </Link>
                         
                     </section>
@@ -98,12 +103,12 @@ renderItem={item => (
     <Card title={item.title}>Card content</Card>
   </List.Item> */}
 
-//   <h2>Card</h2>
+  <h2>Card</h2>
 
-// <div class="card">
-//   <img src={business.image_url} alt="Avatar" style="width:100%">
-//   <div class="container">
-//     <h4><b>{business.business_name}</b></h4> 
-//     <p>{business.service}</p> 
-//   </div>
-// </div>
+<div class="card">
+  <img src={business.image_url} alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>{business.business_name}</b></h4> 
+    <p>{business.service}</p> 
+  </div>
+</div>
