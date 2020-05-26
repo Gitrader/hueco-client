@@ -33,7 +33,7 @@ class App extends Component {
           <PublicRoute exact path="/signup" component={Signup} />
           <PublicRoute exact path="/login" component={Login} />
           <PublicRoute exact path="/businesses/:businessId" component={BusinessDetails} />
-          <PublicRoute exact path="/booking/contact-info" component={ContactInfo} />
+          <PublicRoute exact path="/booking/:businessId/:timeslotId/contact-info" component={ContactInfo} />
           <PublicRoute exact path="/booking/:bookingId/payment-information" component={Payment} />
           <PublicRoute exact path="/booking/:bookingId" component={QRCode} />
 

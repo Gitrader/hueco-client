@@ -32,9 +32,21 @@ const layout = {
 
 const ContactInfo = (props) => {
     const onFinish = values => {
-      console.log('props', props);
-      const {first_name, last_name,email}=values
-      props.booking(first_name, last_name,email)
+      console.log('propsbooooking', props);
+      const {first_name, last_name,email}=values;
+const{businessId, timeslotId}=props.match.params;
+      bookingService
+      .bookingUserContactInfo({ 
+        first_name,
+        last_name,
+        email,
+        businessId,
+        timeslotId
+      }) 
+     .then( (response) =>{console.log("response", response)
+     let newBookingId= response.newBooking._id
+      props.history.push(`/booking/${newBookingId}/payment-information`)})
+     .catch( (err) => console.log(err));
     };
 
     const onFinishFailed = errorInfo => {

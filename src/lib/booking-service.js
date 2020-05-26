@@ -33,10 +33,10 @@ class Booking {
   ///////////ID//////////////////
 
   //Route /booking/:bookingId/payment-information
-  bookingUserPaymentInfo(creditCardObj) 
+  bookingUserPaymentInfo(creditCardObj,bookingId) 
   {
   return this.booking
-    .put("/api/booking/:bookingId/payment-information",  creditCardObj)
+    .put(`/api/booking/${bookingId}/payment-information`,  creditCardObj)
     .then(({ data }) => data);
   // .then((response) => response.data);
 }

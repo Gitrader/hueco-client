@@ -28,29 +28,23 @@ class Payment extends Component {
     // const bookingId=this.props.booking._id
     // const myHuecoId=this.props.timeSlot._id
     
-                        // bookingService
-                        // .getBooking(bookingId)
-                        // .then((booking)=> {
-                        //     console.log("booking",booking)
-                        //   this.setState({ 
-                        //     cardholder_name:booking.cardholder_name,
-                        //     card_number: booking.card_number,
-                        //     expiration_date: booking.expiration_date,
-                        //     cv_code: booking.cv_code
-
-                        //   })
-                          
-                        // })
-                        // .catch( (err) => console.log(err));
-
+                       
   }
 
 
   handleFormSubmit = event => {
     event.preventDefault();
     const {cardholder_name, card_number, expiration_date, cv_code} = this.state;
+const {bookingId}=this.props.match.params
+    bookingService
+    .bookingUserPaymentInfo({cardholder_name, card_number, expiration_date, cv_code},bookingId)
+    .then((booking)=> {
+        console.log("booking",booking)
+      this.props.history.push(`/booking/${booking._id}`)
+    })
+    .catch( (err) => console.log(err));
 
-    this.props.payment(cardholder_name, card_number, expiration_date, cv_code);
+    // this.props.payment(cardholder_name, card_number, expiration_date, cv_code);
     // this.props.login method is coming from the AuthProvider
     // injected by the withAuth() HOC
   };

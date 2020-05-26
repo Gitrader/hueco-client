@@ -54,6 +54,20 @@ componentDidMount () {
 
 }
 
+deleteHueco = (id,index) => {
+  const businessId=this.props.business._id
+  businessService
+  .deleteHueco(businessId,id)
+  .then((business)=> {
+    console.log("businesses.availability",business.availability)
+    const availabilityCopy = [...this.state.availability]
+    availabilityCopy.splice(index,1)
+  this.setState({ availability: availabilityCopy})
+  
+})
+.catch( (err) => console.log(err));
+
+}
  
 
   render() {
@@ -65,15 +79,18 @@ componentDidMount () {
 
           {availability.length>0?(
             <div>
+            
             {availability.map
-              ((availability) => {
+            
+              ((eachSlots,index) => {
+                console.log("availabilityyy",eachSlots)
                   return (<div>
-                     <p>{availability.timeSlot}</p>
+                     <p>{eachSlots.timeSlot}</p>
                     
-                     {/* <Link to={`/businesses/${this.props.business._id}/delete/${this.props.business.availability.timeSlot._id}`}>
-                     <Button>Delete</Button>
-                     </Link> */}
-                    {/* button pour ajouter un autre hueco */}
+                     
+                     <Button onClick={()=> this.deleteHueco(eachSlots._id,index)}>Delete</Button>
+                     
+                    
                    </div>
               )})} 
           <Button type="primary" icon={<PlusOutlined />}>

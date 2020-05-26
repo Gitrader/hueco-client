@@ -75,7 +75,7 @@ return nextState !== this.state
                   <p >Available huecos:<ul> {
                     business.availability.map(hueco=>{
                    return(
-                     <Link to={"/booking/contact-info"}>
+                     <Link to={`/booking/${business._id}/${hueco._id}/contact-info`}>
                      <Button>
                        {hueco.timeSlot}
                        </Button>
