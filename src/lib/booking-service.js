@@ -14,7 +14,7 @@ class Booking {
       last_name,
       email,
       businessId,
-      timeslot 
+      timeslotId 
     }) 
     {
     return this.booking
@@ -23,7 +23,7 @@ class Booking {
           last_name,
           email,
           businessId,
-          timeslot
+          timeslotId
          })
       .then(({ data }) => data);
     // .then((response) => response.data);

@@ -57,6 +57,9 @@ class Navbar extends Component {
         </Link>
         </Menu.Item>
        
+       
+
+
         <Menu.Item key="4">
         <Link to={"/private"}>
         My Huecos
@@ -103,7 +106,9 @@ class Navbar extends Component {
         <Link to={"/signup"}>
         Business Sign up
         </Link>
+
         </Menu.Item>
+        
       </Menu>
     </Header>
               

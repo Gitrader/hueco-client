@@ -36,3 +36,9 @@ button.navbar-button {
   color: white;
   text-align: center;
 }
+
+.footer p{
+  /* margin-top:1%; */
+  margin-bottom:2px;
+}
+

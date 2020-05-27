@@ -76,17 +76,30 @@ return nextState !== this.state
                   <p className="hueco-price">Hueco's price: {business.discounted_price}€</p>
                   </div>
                   <p className="description-details">Description of the service: {business.description}</p>
-                  <p >Available huecos:<ul> {
+                  <p >Available huecos:</p><ul>
+                  
+                   {
                     business.availability.map(hueco=>{
-                   return(
-                     <Link to={`/booking/${business._id}/${hueco._id}/contact-info`}>
-                     <Button>
-                       {hueco.timeSlot}
-                       </Button>
-                       </Link>
-                    )})}
+                   console.log("huecoisbooke",hueco.isBooked)
+                    return hueco.isBooked===true?( null):
+                       
+                     
+                    
+                    
+                      (<div>
+                      <Link to={`/booking/${business._id}/${hueco._id}/contact-info`}>
+                   
+                   <Button>
+                     {hueco.timeSlot}
+                     </Button>
+                     </Link>
+                     </div>
+                      
+                      )})
+                     
+                    }
                     </ul>
-                   </p>
+                   
               </div>
 
 

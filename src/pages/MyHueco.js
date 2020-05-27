@@ -13,19 +13,8 @@ class MyHueco extends Component {
    availability:[], 
 
   
-  
-  
   };
 
- 
-  // component did uptdate appelle database, aller chercher pour ce business (busniessID), regarder s'il a des crénaux au début
-
-  // Si oui this.Setstate en remplissant availabilyt et change isEmpty par false.
-
-  // A chaque fois qu'on clicque sur add, appel une fonction qui appelle la DB, et qui appelle la route add hueco.
-
-
-  // Une fois que add hueco est ajouté, appel db 
 
 
 componentDidMount () {
@@ -83,24 +72,20 @@ deleteHueco = (id,index) => {
             {availability.map
             
               ((eachSlots,index) => {
-                console.log("availabilityyy",eachSlots)
-                  return (<div>
-
-                  {/* {
-                    eachSlots.timeSlot.isBooked===true
-                  ?null: <p>{eachSlots.timeSlot}</p>
+            
+                  
+                 console.log("each",eachSlots.isBooked) 
+                  
+                   if (eachSlots.isBooked===true){
+                  
+                    return (<Button style={{backgroundColor:"red"}}> {eachSlots.timeSlot}</Button>)}
                     
-                     
+                  else{return ( <div>
+                    <p>{eachSlots.timeSlot}</p>
                     <Button onClick={()=> this.deleteHueco(eachSlots._id,index)}>Delete</Button>
-                    } */}
-                     <p className="timeslot">{eachSlots.timeSlot}</p>
-                    
-                     
-                     <Button onClick={()=> this.deleteHueco(eachSlots._id,index)}>Delete</Button> 
-                     
-                    
-                   </div>
-              )})} 
+                  </div>)}
+                   
+              })} 
           <Button type="primary" icon={<PlusOutlined />}>
           <Link to={`/businesses/${this.props.business._id}/add-hueco`} className="link-hueco">
       Add a hueco
@@ -116,30 +101,6 @@ deleteHueco = (id,index) => {
     </div>)
     }
 
-
-        {/* <form onSubmit={this.handleFormSubmit}>
-
-          <label>Hueco 1:</label>
-          <input type="text" name="hueco1" value={availability[0]} onChange={this.handleChange} />
-
-          <label>Hueco 2:</label>
-          <input type="text" name="hueco2" value={availability[1]} onChange={this.handleChange} />
-
-          <label>Hueco 3:</label>
-          <input type="text" name="hueco3" value={availability[2]} onChange={this.handleChange} />
-
-          <label>Hueco 4:</label>
-          <input type="text" name="hueco4" value={availability[3]} onChange={this.handleChange} />
-
-          <label>Hueco 5:</label>
-          <input type="text" name="hueco5" value={availability[4]} onChange={this.handleChange} />
-
-          
-
-          <input type="submit" value="myHuecos" />
-        </form> */}
-
-        
       </div>
     );
   }

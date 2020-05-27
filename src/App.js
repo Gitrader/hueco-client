@@ -42,10 +42,11 @@ class App extends Component {
           <PrivateRoute exact path="/businesses/:businessId/edit-hueco" component={EditHueco} />
         </Switch>
 
+
         <div className="footer">
-  <p>Footer</p>
+  <p>Hueco ©2020 Created by Maxime Lagrange</p>
 </div>
-       
+    
       </div>
     );
   }

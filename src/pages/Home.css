@@ -2,6 +2,7 @@
     
 display:flex;
 flex-direction:row;
+
     
 }
 
@@ -11,6 +12,8 @@ flex-direction:row;
     flex-direction:row;
         
     }
+
+    
 
 div.map{
     position: -webkit-sticky;
@@ -32,6 +35,7 @@ div.map{
     margin-bottom: 8%;
     border-radius:10px;
     margin-left:10%;
+   
     
   
   }
