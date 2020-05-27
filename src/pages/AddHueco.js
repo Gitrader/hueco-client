@@ -64,10 +64,12 @@ class AddHueco extends Component {
         <form onSubmit={this.handleFormSubmit}>
         <div className="hueco-container">
         <label for="">Select your empty slots:</label>
+        <div class="select">
 <select id="" name="selectedSlot" form="" onChange={this.handleChange} >
-<option value="" selected>Select</option>
-<option value="00h - 01h">00h - 01h</option>
-<option value="01h - 02h">01h - 02h</option>
+  {/* <option value="" selected>Select</option> */}
+  <option value="" hidden>Select</option>
+  <option value="00h - 01h">00h - 01h</option>
+  <option value="01h - 02h">01h - 02h</option>
   <option value="02h - 03h">02h - 03h</option>
   <option value="03h - 04h">03h - 04h</option>
   <option value="04h - 05h">04h - 05h</option>
@@ -75,7 +77,7 @@ class AddHueco extends Component {
   <option value="06h - 07h">06h - 07h</option>
   <option value="07h - 08h">07h - 08h</option>
   <option value="08h - 09h">08h - 09h</option>
-  <option value="9h - 10h">9h - 10h</option>
+  <option value="09h - 10h">09h - 10h</option>
   <option value="10h - 11h">10h - 11h</option>
   <option value="11h - 12h">11h - 12h</option>
   <option value="12h - 13h">12h - 13h</option>
@@ -86,20 +88,22 @@ class AddHueco extends Component {
   <option value="17h - 18h">17h - 18h</option>
   <option value="18h - 19h">18h - 19h</option>
   <option value="19h - 20h">19h - 20h</option>
+  <option value="18h - 19h">20h - 21h</option>
   <option value="21h - 22h">21h - 22h</option>
   <option value="22h - 23h">22h - 23h</option>
   <option value="23h - 00h">23h - 00h</option>
 
 </select>
 </div>
+</div>
 
 
 
 
           <div className="hueco-container">
-          <button  type="submit" icon={<PlusOutlined />}>
+          <button className="ant-btn-primary" type="submit" icon={<PlusOutlined />}>
           {/* <Link to={"/private"} className="link-hueco"> */}
-    Add my huecos now!
+    Add my Hueco now!
       {/* </Link> */}
     </button>
     

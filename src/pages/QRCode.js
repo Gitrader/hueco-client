@@ -51,18 +51,19 @@ class QRCode extends Component {
     status="success"
     title="Congratulations! Your Hueco Has Been Successfully Booked " 
     subTitle="Make sure you download your QR Code by clicking below on download!"
-    /////////////////////// CHECK DOWNLOAD FILE////////////////////////////////
+    
     
     
     extra={[
-      
-      <a href="https://res.cloudinary.com/dksnrn8gi/image/upload/v1590510091/m3-project/qrcode_r6n6qv.png" target="_blank" rel="noopener noreferrer" ><Button type="primary" key="console">
+      <div className="buttons-qr">
+      <a href="https://res.cloudinary.com/dksnrn8gi/image/upload/v1590510091/m3-project/qrcode_r6n6qv.png" target="_blank" rel="noopener noreferrer" >
+      <Button type="primary" key="console" className="space-btn">
         Download My QR Code!
-      </Button></a>,
+      </Button></a>
       <Link to={"/"}>
       <Button key="buy">See other Huecos available today!</Button>
       </Link>
-       /////////////////////// CHECK DOWNLOAD FILE////////////////////////////////
+       </div>
     ]}
   />
    </div>

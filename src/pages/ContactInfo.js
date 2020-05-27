@@ -82,7 +82,9 @@ const{businessId, timeslotId}=props.match.params;
   </Steps>
   </div>
   
+  <h2 className="title-info">Please fill out your information:</h2>
     <Form
+    className="form-contact"
       {...layout}
       name="basic"
       initialValues={{

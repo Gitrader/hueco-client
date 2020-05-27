@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { withAuth } from './../lib/Auth';
 import "./MyHueco.css"
 import { Empty,Button } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import { PlusOutlined,DeleteOutlined } from '@ant-design/icons';
 import businessService from "./../lib/business-service"
 
 class MyHueco extends Component {
@@ -78,11 +78,17 @@ deleteHueco = (id,index) => {
                   
                    if (eachSlots.isBooked===true){
                   
-                    return (<Button style={{backgroundColor:"red"}}> {eachSlots.timeSlot}</Button>)}
+                    return (
+                      <div>
+                      
+                      <Button type="primary" style={{backgroundColor:"red"}}> {eachSlots.timeSlot}</Button>
+                    <Button onClick={()=> this.deleteHueco(eachSlots._id,index)}><DeleteOutlined /></Button>
+                    </div>)}
                     
                   else{return ( <div>
-                    <p>{eachSlots.timeSlot}</p>
-                    <Button onClick={()=> this.deleteHueco(eachSlots._id,index)}>Delete</Button>
+                    {/* <p>{eachSlots.timeSlot}</p> */}
+                    <Button type="primary" style={{backgroundColor:"limegreen"}}> {eachSlots.timeSlot}</Button>
+                    <Button onClick={()=> this.deleteHueco(eachSlots._id,index)}><DeleteOutlined /></Button>
                   </div>)}
                    
               })} 

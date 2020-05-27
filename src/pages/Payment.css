@@ -39,34 +39,56 @@ html {
 
 /* Credit Card */
 .credit-card {
-    width: 360px;
-    height: 400px;
+    width: 400px;
+    height: 350px;
     margin: 60px auto 0;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(24, 144, 255);
     border-radius: 6px;
     background-color: #fff;
     box-shadow: 1px 2px 3px 0 rgba(0,0,0,.10);
     margin-top:-1%;
+    margin-bottom:-15%;
 }
 
 .form-header {
     height: 60px;
     padding: 20px 30px 0;
-    border-bottom: 1px solid #e1e8ee;
+    border-bottom: 1px solid rgb(24, 144, 255);
+    /* display:flex; */
 }
  
+/* .form-header img {
+    width:60%;
+    margin-left:2%;
+} */
+
+
+
 .form-body {
     height: 340px;
     padding: 30px 30px 20px;
-    margin-top: 10%;
+    margin-top: -5%;
+    margin-bottom:-10%;
    
 }
 
+.form-body img {
+    width:50%;
+    margin-bottom:5%;
+    /* margin-top:-30%; */
+   
+}
+
+
+
+
 /* Title */
 .title {
-    font-size: 18px;
-    margin: 0;
-    color: #5e6977;
+    font-size: 15px;
+    /* margin: 0; */
+    /* color: #5e6977; */
+    /* padding-right:-10px; */
+    /* width:100%; */
 }
 
 /* Common */
@@ -93,7 +115,9 @@ html {
 .month select,
 .year select {
     opacity: .7;
-    color: #86939e;
+    /* color: #86939e; */
+    color: black;
+    font-weight: normal;
 }
 
 /* Card Number */
@@ -176,3 +200,6 @@ html {
     
 }
  
+/* .cc-icon{
+    width:5%;
+} */

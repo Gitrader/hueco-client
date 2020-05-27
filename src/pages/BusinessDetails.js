@@ -60,23 +60,21 @@ return nextState !== this.state
                   
                   <div className="details-business">
                     
-                      <p >{business.address} {business.zip_code} {business.city}</p>
+                      <p><b>Address:</b> {business.address} {business.zip_code} {business.city}</p>
                       
-                     
-                    
+                  <p> <b>Phone number:</b> {business.phone_number}</p>
                   
-
-                  <p > Phone number: {business.phone_number}</p>
-                  
-                  <p >Service offered: {business.service}</p>
-                  <p >Discount: -{business.discount}%</p>
+                  <p ><b>Service offered:</b> {business.service}</p>
+                  <p ><b>Discount:</b> <span className="bleu-btn">-{business.discount}%</span></p>
                   <div className="prices">
-                  <p >Initial price: {business.initial_price}€</p>
+                  <p ><b>Initial price:</b> <span className="bleu-btn"><strike>{business.initial_price}€</strike></span></p>
                   
-                  <p className="hueco-price">Hueco's price: {business.discounted_price}€</p>
+                  <p className="hueco-price"><b>Hueco's price:</b> <span className="bleu-btn">{business.discounted_price}€</span></p>
                   </div>
-                  <p className="description-details">Description of the service: {business.description}</p>
-                  <p >Available huecos:</p><ul>
+                  <p className="description-details"><b> Description of the service:</b><br/>  {business.description}</p>
+                 <div className="available-huecos">
+                  <p ><b>Select the Hueco you want to book:</b></p>
+                  <ul>
                   
                    {
                     business.availability.map(hueco=>{
@@ -86,8 +84,8 @@ return nextState !== this.state
                      
                     
                     
-                      (<div>
-                      <Link to={`/booking/${business._id}/${hueco._id}/contact-info`}>
+                      (<div className="hueco-link">
+                      <Link to={`/booking/${business._id}/${hueco._id}/contact-info`} >
                    
                    <Button>
                      {hueco.timeSlot}
@@ -99,7 +97,7 @@ return nextState !== this.state
                      
                     }
                     </ul>
-                   
+                    </div>
               </div>
 
 

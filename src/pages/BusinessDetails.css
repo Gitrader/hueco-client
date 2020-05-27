@@ -14,6 +14,8 @@
 
 .title-business{
     text-align : center;
+    margin-top: 9%;
+    margin-bottom: -3%;
 }
 
 .prices{
@@ -40,5 +42,26 @@
 
 .details-business{
     margin-left: 5%;
+    
 }
 
+.available-huecos ul{
+    display:flex;
+    margin-left:-4%;
+    margin-right:-3%;
+    
+}
+
+.hueco-link {
+   
+    margin-right:3%;
+    
+    
+}
+
+
+
+.bleu-btn{
+    color:rgb(24, 144, 255);
+  font-weight: bolder;
+}

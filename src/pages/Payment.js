@@ -73,11 +73,12 @@ const {bookingId}=this.props.match.params
   </div>
         <form className="credit-card" onSubmit={this.handleFormSubmit}>
   <div className="form-header">
-    <h4 className="title">Credit card details</h4>
+    <h4 className="title">Credit card details: </h4>
+   
   </div>
  
   <div className="form-body">
-    
+  <img src="https://res.cloudinary.com/dksnrn8gi/image/upload/v1590607554/m3-project/credit-cards-icons-png_nbh1fv.png" alt="cc-logo" />
   <input type="text" name="cardholder_name" className="card-number" placeholder="Cardholder Name" value={cardholder_name} onChange={this.handleChange}/>
     <input type="text" name="card_number" className="card-number" placeholder="Card Number" value={card_number} onChange={this.handleChange}/>
  
