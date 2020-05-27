@@ -25,3 +25,14 @@ button.navbar-button {
   color: white;
   text-decoration: none;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+  background-color:rgb(1, 21, 41);
+  color: white;
+  text-align: center;
+}

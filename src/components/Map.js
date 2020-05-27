@@ -107,7 +107,7 @@ return nextState !== this.state
 
           <ReactMapGL
           // style={{ position: 'fixed', zIndex: 1, width: '100%' }}
-        style={{ marginLeft:"45%" , position: 'fixed', zIndex: 1, width: '100%', marginTop:"0%",}}
+        style={{ marginLeft:"45%" , position: 'fixed', zIndex: 1, width: '100%', marginTop:"-2%",}}
         
           className="map"
             {...this.state.viewport}

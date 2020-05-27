@@ -41,6 +41,10 @@ class App extends Component {
           <PrivateRoute exact path="/businesses/:businessId/add-hueco" component={AddHueco} />
           <PrivateRoute exact path="/businesses/:businessId/edit-hueco" component={EditHueco} />
         </Switch>
+
+        <div className="footer">
+  <p>Footer</p>
+</div>
        
       </div>
     );
