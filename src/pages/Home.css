@@ -19,7 +19,7 @@ div.map{
 }
 
 .business-card{
-    margin-left:35%;
+    margin-left:20%;
    
     
 }
@@ -60,6 +60,7 @@ div.map{
       /* border-radius: 10px   ; */
       border-top-left-radius:10px;
       border-bottom-left-radius:10px;
+     
   }
   
  /* .container{

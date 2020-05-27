@@ -1,5 +1,33 @@
 .details{
     margin-top:7%;
+    display:flex;
+    margin-left:20%;
+    
+}
+
+.details img{
+   width: 30%;
+   margin-left:5%;
+   border-radius:10px;
+    
+}
+
+.title-business{
+    text-align : center;
+}
+
+.prices{
+    display:flex;
+    
+
+}
+
+.hueco-price{
+    margin-left:2%;
+}
+
+.description-details{
+    width:50%;
 }
 /* .details h2{
     text-align: center;
@@ -10,5 +38,7 @@
   
 } */
 
-
+.details-business{
+    margin-left: 5%;
+}
 

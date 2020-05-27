@@ -1,6 +1,7 @@
 .huecos{
 
     margin-top:5%;
+    text-align: center;
 }
 
 .add-hueco{
@@ -20,5 +21,14 @@
 }
 
 .link-hueco{
+    
     color:white;
+}
+
+.ant-btn-primary{
+    margin-top:2%;
+}
+
+.timeslot{
+    margin-top:1%;
 }

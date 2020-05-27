@@ -67,6 +67,9 @@ const {bookingId}=this.props.match.params
     <Step title="Secure your hueco" subTitle="" description="Payment Information" />
     <Step title="Waiting" description="Hueco confirmation" />
   </Steps>
+  <div className="notice">
+    <p><b>THIS PAYMENT PROCESSOR IS USED FOR A DEMO, DO NOT ENTER ANY REAL CREDIT CARD DETAILS!</b></p>
+  </div>
   </div>
         <form className="credit-card" onSubmit={this.handleFormSubmit}>
   <div className="form-header">

@@ -8,7 +8,8 @@ import {
   Form,
   Input,
   Button,
-  Steps
+  Steps,
+  notification,
   
 } from 'antd';
 import "./ContactInfo.css"
@@ -29,6 +30,21 @@ const layout = {
       span: 16,
     },
   };
+
+  // let randomNumber = (max, min) => { 
+
+  //   return Math.floor(Math.random() * (max - min + 1) + 10);
+  // }
+
+  const openNotification =( placement) => {
+    let randomNumber=Math.floor(Math.random() * (100 - 10+ 1) + 10)
+    notification.info({
+      message: `${randomNumber} people are checking this Hueco near Barcelona.`,
+      description:
+        `Be the one to book it now!`, placement,
+    });
+  };
+
 
 const ContactInfo = (props) => {
     const onFinish = values => {
@@ -79,6 +95,7 @@ const{businessId, timeslotId}=props.match.params;
 <Form.Item
         label="First name"
         name="first_name"
+        onClick={() => openNotification('bottomLeft')}
         rules={[
           {
             required: true,
@@ -137,3 +154,50 @@ export default ContactInfo;
 
 
 
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import 'antd/dist/antd.css';
+// import './index.css';
+// import { Button, notification, Divider, Space } from 'antd';
+// import {
+//   RadiusUpleftOutlined,
+//   RadiusUprightOutlined,
+//   RadiusBottomleftOutlined,
+//   RadiusBottomrightOutlined,
+// } from '@ant-design/icons';
+
+// const openNotification = placement => {
+//   notification.info({
+//     message: `Notification ${placement}`,
+//     description:
+//       'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+//     placement,
+//   });
+// };
+
+// ReactDOM.render(
+//   <div>
+//     <Space>
+//       <Button type="primary" onClick={() => openNotification('topLeft')}>
+//         <RadiusUpleftOutlined />
+//         topLeft
+//       </Button>
+//       <Button type="primary" onClick={() => openNotification('topRight')}>
+//         <RadiusUprightOutlined />
+//         topRight
+//       </Button>
+//     </Space>
+//     <Divider />
+//     <Space>
+//       <Button type="primary" onClick={() => openNotification('bottomLeft')}>
+//         <RadiusBottomleftOutlined />
+//         bottomLeft
+//       </Button>
+//       <Button type="primary" onClick={() => openNotification('bottomRight')}>
+//         <RadiusBottomrightOutlined />
+//         bottomRight
+//       </Button>
+//     </Space>
+//   </div>,
+//   document.getElementById('container'),
+// );

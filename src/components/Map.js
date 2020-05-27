@@ -18,8 +18,8 @@ import {
 export default class Map extends Component {
   state = {
     viewport: {
-      width: "80vh",
-      height: "80vh",
+      width: "50%",
+      height: "80%",
       latitude: 41.3851,
       longitude: 2.1734,
       zoom: 10,
@@ -108,7 +108,7 @@ return nextState !== this.state
           <ReactMapGL
           // style={{ position: 'fixed', zIndex: 1, width: '100%' }}
         style={{ marginLeft:"45%" , position: 'fixed', zIndex: 1, width: '100%', marginTop:"0%",}}
-
+        
           className="map"
             {...this.state.viewport}
             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}

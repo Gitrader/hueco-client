@@ -60,6 +60,8 @@ return nextState !== this.state
                         <div className="container">
                           <h4><b>{business.business_name}</b></h4> 
                           <p>{business.service}</p> 
+                          <p>Discount: -{business.discount}%</p> 
+
                         </div>
                       </div>
                      

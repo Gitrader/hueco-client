@@ -85,10 +85,18 @@ deleteHueco = (id,index) => {
               ((eachSlots,index) => {
                 console.log("availabilityyy",eachSlots)
                   return (<div>
-                     <p>{eachSlots.timeSlot}</p>
+
+                  {/* {
+                    eachSlots.timeSlot.isBooked===true
+                  ?null: <p>{eachSlots.timeSlot}</p>
                     
                      
-                     <Button onClick={()=> this.deleteHueco(eachSlots._id,index)}>Delete</Button>
+                    <Button onClick={()=> this.deleteHueco(eachSlots._id,index)}>Delete</Button>
+                    } */}
+                     <p className="timeslot">{eachSlots.timeSlot}</p>
+                    
+                     
+                     <Button onClick={()=> this.deleteHueco(eachSlots._id,index)}>Delete</Button> 
                      
                     
                    </div>

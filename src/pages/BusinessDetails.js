@@ -49,29 +49,33 @@ return nextState !== this.state
       
   
             {business?
-                
-                   
+                <div>
+              <h1 className="title-business">{business.business_name}</h1>
                     <section  className="details">
-                    <h2 >{business.business_name}</h2>
+                    
                   <img src={business.image_url}  alt="img-business"/>
                   
                   {/* <h2>{selectedBusiness.type}</h2>
                   <h2>{selectedBusiness.properties.SERVICE}</h2> */}
-                  <div className="address">
-                    <address>
-                      <p >{business.address}</p>
-                      <p >{business.zip_code}</p>
-                      <p >{business.city}</p>
-                    </address>
+                  
+                  <div className="details-business">
+                    
+                      <p >{business.address} {business.zip_code} {business.city}</p>
+                      
+                     
+                    
                   
 
                   <p > Phone number: {business.phone_number}</p>
                   
                   <p >Service offered: {business.service}</p>
                   <p >Discount: -{business.discount}%</p>
+                  <div className="prices">
                   <p >Initial price: {business.initial_price}€</p>
-                  <p >Hueco's price: {business.discounted_price}€</p>
-                  <p >Description of the service: {business.description}</p>
+                  
+                  <p className="hueco-price">Hueco's price: {business.discounted_price}€</p>
+                  </div>
+                  <p className="description-details">Description of the service: {business.description}</p>
                   <p >Available huecos:<ul> {
                     business.availability.map(hueco=>{
                    return(
@@ -83,7 +87,7 @@ return nextState !== this.state
                     )})}
                     </ul>
                    </p>
-</div>
+              </div>
 
 
 
@@ -91,7 +95,7 @@ return nextState !== this.state
 
                   {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                  </section>
-              
+                 </div>
               
                    
             :null}
