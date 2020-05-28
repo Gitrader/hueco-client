@@ -32,7 +32,12 @@ const Login = (props) => {
   };
 
   return (
+<div className="business-title">
+    <h1 className="business-login">Business Log in</h1>
+   
+
     <div className="form-ant">
+    
     <Form
       {...layout}
       name="basic"
@@ -79,6 +84,7 @@ const Login = (props) => {
         </Button>
       </Form.Item>
     </Form>
+    </div>
     </div>
   );
 };

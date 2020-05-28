@@ -55,105 +55,16 @@ const RegistrationForm = (props) => {
 
   const { errorMessage } = props;
 
-// class Signup extends Component {
-//   state = { 
-//   form:null,
-//    business_name:"", 
-//    email:"", 
-//    password:"",
-//    address:"",
-//    city:"",
-//    zip_code:"",
-//    service:"",
-//    phone_number:"",
-//    image_url:"",
-//    description:"",
-//   //  coordinates:""
-//   };
-
-  
-
-//   handleFormSubmit = event => {
-//     event.preventDefault();
-//     console.log("state",this.state)
-//     const {
-    
-//       business_name, 
-//       email, 
-//       password,
-//       address,
-//       city,
-//       zip_code,
-//       service,
-//       phone_number,
-//       image_url,
-//       description
-//       } = this.state;
-
-//     this.props.signup(
-//       business_name, 
-//       email, 
-//       password,
-//       address,
-//       city,
-//       zip_code,
-//       service,
-//       phone_number,
-//       image_url,
-//       description
-//       );
-//     // this.props.signup method is coming from the AuthProvider
-//     // injected by the withAuth() HOC
-//   };
-
-  
-  
-  
-  
-  
-  
-    
-
-//   handleChange = event => {
-//     const { name, value } = event.target;
-//     this.setState({ [name]: value });
-//   };
-
-//   render() {
-//     const { 
-//       form,
-//       business_name, 
-//       email, 
-//       password,
-//       address,
-//       city,
-//       zip_code,
-//       service,
-//       phone_number,
-//       image_url,
-//       description
-//       } = this.state;
-
-      
-
-//         // const prefixSelector = (
-//         //   <Form.Item name="prefix" noStyle>
-//         //     <Select
-//         //       style={{
-//         //         width: 70,
-//         //       }}
-//         //     >
-//         //       <Option value="86">+86</Option>
-//         //       <Option value="87">+87</Option>
-//         //     </Select>
-//         //   </Form.Item>
-//         // );
 
       
     
       return (
+
+        <div>
+          <h1 className="business-signup">Business Sign up</h1>
+        
       <div className="form-ant">
-        {/* <h1>Sign Up</h1> */}
+        
 
         <Form
       {...formItemLayout}
@@ -333,16 +244,17 @@ const RegistrationForm = (props) => {
       
 
       <Form.Item {...tailFormItemLayout}>
-        <Button type="primary" htmlType="submit" >
+        <Button type="primary" htmlType="submit" className="singup-btn">
           Register
         </Button>
       </Form.Item>
     </Form>
-
+{/* 
 <div className="registered">
         <p >Already have account?</p>
         <Link to={"/login"} className="link"> Login here</Link>
-</div>
+</div> */}
+      </div>
       </div>
       );
     }

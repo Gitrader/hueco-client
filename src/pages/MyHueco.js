@@ -64,7 +64,7 @@ deleteHueco = (id,index) => {
     const { availability} = this.state;
     return (
       <div className="huecos">
-        <h1>My Huecos</h1>
+        <h1>My Huecos for the day:</h1>
 
           {availability.length>0?(
             <div>

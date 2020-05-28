@@ -50,9 +50,11 @@ return nextState !== this.state
   
             {business?
                 <div>
+                
               <h1 className="title-business">{business.business_name}</h1>
+             
                     <section  className="details">
-                    
+                   
                   <img src={business.image_url}  alt="img-business"/>
                   
                   {/* <h2>{selectedBusiness.type}</h2>

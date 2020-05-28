@@ -107,7 +107,7 @@ return nextState !== this.state
 
           <ReactMapGL
           // style={{ position: 'fixed', zIndex: 1, width: '100%' }}
-        style={{ marginLeft:"45%" , position: 'fixed', zIndex: 1, width: '100%', marginTop:"0%",}}
+        style={{ marginLeft:"45%" , position: 'fixed', zIndex: 1, width: '100%', marginTop:"0%"}}
         
           className="map"
             {...this.state.viewport}
@@ -166,18 +166,19 @@ return nextState !== this.state
              
                 <div>
                 
-                  <h2>{selectedBusiness.business_name}</h2>
+                  <h2 className="title-pop">{selectedBusiness.business_name}</h2>
                   <img src={selectedBusiness.image_url} alt="img-business"/>
+                  <div className="more-btn">
                   <Link to={`/businesses/${selectedBusiness._id}`}>
-                  <Button >
+                  <Button type="primary"  >
                   
-                  GO
+                 More details
                   
                   </Button>
                   </Link>
                   {/* <h2>{selectedBusiness.type}</h2>
                   <h2>{selectedBusiness.properties.SERVICE}</h2> */}
-                  
+                  </div>
                 </div>
                 
               </Popup>
