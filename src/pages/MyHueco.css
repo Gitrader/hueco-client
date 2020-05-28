@@ -1,36 +1,29 @@
-.huecos{
-
-    margin-top:5%;
-    text-align: center;
-    
+.huecos {
+  margin-top: 5%;
+  text-align: center;
 }
 
-.add-hueco{
-    margin-top:5%;
-    text-align:center;
+.add-hueco {
+  margin-top: 5%;
+  text-align: center;
 }
 
-.add-hueco Button{
-    margin-top:2%;
-    
+.add-hueco Button {
+  margin-top: 2%;
 }
 
-.add-hueco Button Link{
-    margin-top:2%;
-    
-   
-    
+.add-hueco Button Link {
+  margin-top: 2%;
 }
 
-.link-hueco{
-    
-    color:white;
+.link-hueco {
+  color: white;
 }
 
-.ant-btn-primary{
-    margin-top:2%;
+.ant-btn-primary {
+  margin-top: 2%;
 }
 
-.timeslot{
-    margin-top:1%;
+.timeslot {
+  margin-top: 1%;
 }

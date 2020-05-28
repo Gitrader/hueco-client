@@ -1,71 +1,54 @@
-
-/* .map{
-  margin-bottom:-10%;
-} */
-
 .marker-btn {
-    background:none;
-    border:none;
-    width: 5px;
-    height: 5px;
-    cursor: pointer;
-    
-  }
-  
-  .marker-btn img {
-    
-    width: 25px;
-    height: 25px;
-    
-  }
-  
-  
-  .popup {
-    width:40%;
-    height:25;
-   
-    
-    
-    }
-  
-  .popup img{
-  width:100%;
-  height:100%;
-  border-radius:2%;
-  
-  }
-  
-  .current-location{
-  position:absolute right 0;
-  background:none;
-  border:none;
-  
-  
-  }
-  
-  .NavigationControl{
-   position:absolute;
-  right:1%;
-  margin-top:7%;
-  
-  }
-  
-  .GeolocateControl{
-    position:absolute;
-  right:1%;
-  margin-top:1%;
-  
-  }
-  
-  .mapgl{
-    position:fixed;
-  }
- 
- .more-btn{
-   text-align:center;
- }
+  background: none;
+  border: none;
+  width: 5px;
+  height: 5px;
+  cursor: pointer;
+}
 
- .title-pop{
-   text-align:center;
-   border: solid 3px rgb(24, 144, 255);
- }
+.marker-btn img {
+  width: 25px;
+  height: 25px;
+}
+
+.popup {
+  width: 40%;
+  height: 25;
+}
+
+.popup img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2%;
+}
+
+.current-location {
+  position: absolute right 0;
+  background: none;
+  border: none;
+}
+
+.NavigationControl {
+  position: absolute;
+  right: 1%;
+  margin-top: 7%;
+}
+
+.GeolocateControl {
+  position: absolute;
+  right: 1%;
+  margin-top: 1%;
+}
+
+.mapgl {
+  position: fixed;
+}
+
+.more-btn {
+  text-align: center;
+}
+
+.title-pop {
+  text-align: center;
+  border: solid 3px rgb(24, 144, 255);
+}

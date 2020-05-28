@@ -1,27 +1,17 @@
-.form-ant{
-    margin-top:3%;
-  
-      
-  }
-  
-  .input{
-    width:50%;
-  }
-
-  .registered{
-      text-align:center;
-      line-height: 1%;
-  }
-
-  /* .registered .link{
-   margin-top:-30%;
-} */
-
-.business-signup{
-  text-align:center;
-  margin-bottom:-10%;
+.form-ant {
+  margin-top: 3%;
 }
 
-/* .singup-btn{
-  margin-top:-20%;
-} */
+.input {
+  width: 50%;
+}
+
+.registered {
+  text-align: center;
+  line-height: 1%;
+}
+
+.business-signup {
+  text-align: center;
+  margin-bottom: -10%;
+}

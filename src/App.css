@@ -1,18 +1,15 @@
+@import "~antd/dist/antd.css";
 
-@import '~antd/dist/antd.css';
-
-html, body {
+html,
+body {
   margin: 0 auto;
   padding: 0 auto;
- 
 }
 
-
-
-nav.navbar { 
+nav.navbar {
   display: flex;
   padding: 0px 20px;
-  background: #686de0; 
+  background: #686de0;
 }
 
 button.navbar-button {
@@ -32,14 +29,12 @@ button.navbar-button {
   left: 0;
   bottom: 0;
   width: 100%;
-  
-  background-color:rgb(1, 21, 41);
+
+  background-color: rgb(1, 21, 41);
   color: white;
   text-align: center;
 }
 
-.footer p{
-  /* margin-top:1%; */
-  margin-bottom:2px;
+.footer p {
+  margin-bottom: 2px;
 }
-

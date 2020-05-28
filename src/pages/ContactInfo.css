@@ -1,25 +1,23 @@
-.contact{
-    margin-top:8%;
+.contact {
+  margin-top: 8%;
 }
 
-.step{
-    width:70%;
-    margin-left:15%;
-    margin-bottom:5%;
-    margin-right: -10%;
-
-   
+.step {
+  width: 70%;
+  margin-left: 15%;
+  margin-bottom: 5%;
+  margin-right: -10%;
 }
 
-.input{
-    width:50%;
-  }
+.input {
+  width: 50%;
+}
 
-  .form-contact{
-      margin-top:8%;
-  }
+.form-contact {
+  margin-top: 8%;
+}
 
-  .title-info{
-      text-align: center;
-      margin-bottom:-5%;
-  }
+.title-info {
+  text-align: center;
+  margin-bottom: -5%;
+}

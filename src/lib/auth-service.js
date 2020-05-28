@@ -4,13 +4,13 @@ class Auth {
   constructor() {
     this.auth = axios.create({
       baseURL: process.env.REACT_APP_API_URL,
-      withCredentials: true
+      withCredentials: true,
     });
   }
 
-  signup({ 
-    business_name, 
-    email, 
+  signup({
+    business_name,
+    email,
     password,
     address,
     city,
@@ -19,14 +19,12 @@ class Auth {
     phone_number,
     image_url,
     description,
-    coordinates
-  }) 
-  {
+    coordinates,
+  }) {
     return this.auth
-      .post("/auth/signup", 
-      { 
-        business_name, 
-        email, 
+      .post("/auth/signup", {
+        business_name,
+        email,
         password,
         address,
         city,
@@ -35,7 +33,7 @@ class Auth {
         phone_number,
         image_url,
         description,
-        coordinates
+        coordinates,
       })
       .then(({ data }) => data);
     // .then((response) => response.data);

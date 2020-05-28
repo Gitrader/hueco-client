@@ -1,13 +1,10 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
 
 const { Consumer, Provider } = React.createContext();
 
-
-
 // HOC
 function withAuth(WrappedComponent) {
-
   return function (props) {
     return (
       <Consumer>
@@ -23,39 +20,49 @@ function withAuth(WrappedComponent) {
           />
         )}
       </Consumer>
-    )
-  }
+    );
+  };
 }
 
 class AuthProvider extends React.Component {
   state = {
     business: null,
     isLoggedIn: false,
-    isLoading: true
-  }
+    isLoading: true,
+  };
 
   componentDidMount() {
     // When app and AuthProvider load for the first time
     // make a call to the server '/me' and check if user is authenitcated
-    axios.get(process.env.REACT_APP_API_URL + '/auth/me', { withCredentials: true })
+    axios
+      .get(process.env.REACT_APP_API_URL + "/auth/me", {
+        withCredentials: true,
+      })
       .then((response) => {
         const business = response.data;
         this.setState({ isLoggedIn: true, isLoading: false, business });
       })
-      .catch((err) => this.setState({ isLoggedIn: false, isLoading: false, business: null }));
+      .catch((err) =>
+        this.setState({ isLoggedIn: false, isLoading: false, business: null })
+      );
   }
 
   login = (email, password) => {
-    axios.post(process.env.REACT_APP_API_URL + '/auth/login', { email, password }, { withCredentials: true })
+    axios
+      .post(
+        process.env.REACT_APP_API_URL + "/auth/login",
+        { email, password },
+        { withCredentials: true }
+      )
       .then((response) => {
         const business = response.data;
         this.setState({ isLoggedIn: true, isLoading: false, business });
       })
       .catch((err) => console.log(err));
-  }
+  };
   signup = (
-    business_name, 
-    email, 
+    business_name,
+    email,
     password,
     address,
     city,
@@ -65,22 +72,11 @@ class AuthProvider extends React.Component {
     image_url,
     description,
     coordinates
-    ) => {
-      console.log("signup",  business_name, 
-      email, 
-      password,
-      address,
-      city,
-      zip_code,
-      service,
-      phone_number,
-      image_url,
-      description,
-      coordinates )
-    axios.post(process.env.REACT_APP_API_URL + '/auth/signup', 
-    { 
-      business_name, 
-      email, 
+  ) => {
+    console.log(
+      "signup",
+      business_name,
+      email,
       password,
       address,
       city,
@@ -90,32 +86,54 @@ class AuthProvider extends React.Component {
       image_url,
       description,
       coordinates
-    }, 
-    { withCredentials: true })
+    );
+    axios
+      .post(
+        process.env.REACT_APP_API_URL + "/auth/signup",
+        {
+          business_name,
+          email,
+          password,
+          address,
+          city,
+          zip_code,
+          service,
+          phone_number,
+          image_url,
+          description,
+          coordinates,
+        },
+        { withCredentials: true }
+      )
       .then((response) => {
         const business = response.data;
         this.setState({ isLoggedIn: true, isLoading: false, business });
       })
       .catch((err) => console.log(err));
-  }
+  };
   logout = () => {
-    axios.get(process.env.REACT_APP_API_URL + '/auth/logout', { withCredentials: true })
+    axios
+      .get(process.env.REACT_APP_API_URL + "/auth/logout", {
+        withCredentials: true,
+      })
       .then((response) => {
         this.setState({ isLoggedIn: false, isLoading: false, business: null });
       })
       .catch((err) => console.log(err));
-  }
+  };
 
   render() {
     const { business, isLoggedIn, isLoading } = this.state;
     const { login, signup, logout } = this;
 
     return (
-      <Provider value={{ business, isLoggedIn, isLoading, login, signup, logout }}>
+      <Provider
+        value={{ business, isLoggedIn, isLoading, login, signup, logout }}
+      >
         {this.props.children}
       </Provider>
-    )
+    );
   }
 }
 
-export { withAuth, AuthProvider }
+export { withAuth, AuthProvider };
