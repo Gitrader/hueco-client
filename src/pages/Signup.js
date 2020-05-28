@@ -51,6 +51,9 @@ const RegistrationForm = (props) => {
       service,
       phone_number,
       description,
+      discount,
+      initial_price,
+      discounted_price
     } = values;
     props.signup(
       business_name,
@@ -61,7 +64,10 @@ const RegistrationForm = (props) => {
       zip_code,
       service,
       phone_number,
-      description
+      description,
+      discount,
+      initial_price,
+      discounted_price
     );
   };
 
@@ -180,12 +186,56 @@ const RegistrationForm = (props) => {
             rules={[
               {
                 required: true,
-                message: "Please input your service",
+                message: "Please input your service!",
               },
             ]}
           >
             <Input className="input" />
           </Form.Item>
+
+
+
+          <Form.Item
+            name="discount"
+            label="How much discount do you want to offer?"
+            rules={[
+              {
+                required: true,
+                message: "Please input your discount!",
+              },
+            ]}
+          >
+            <Input className="input" />
+          </Form.Item>
+
+
+          <Form.Item
+            name="initial_price"
+            label="What is the initial price of your service?"
+            rules={[
+              {
+                required: true,
+                message: "Please input your initial price!",
+              },
+            ]}
+          >
+            <Input className="input" />
+          </Form.Item>
+
+          <Form.Item
+            name="discounted_price"
+            label="What is the discouted price of your service?"
+            rules={[
+              {
+                required: true,
+                message: "Please input your discounted price!",
+              },
+            ]}
+          >
+            <Input className="input" />
+          </Form.Item>
+
+
 
           <Form.Item
             name="description"

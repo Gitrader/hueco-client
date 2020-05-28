@@ -35,7 +35,14 @@ export default class BusinessDetails extends Component {
             <h1 className="title-business">{business.business_name}</h1>
 
             <section className="details">
-              <img src={business.image_url} alt="img-business" />
+              {!business.image_url ? (
+                <img
+                  src="https://res.cloudinary.com/dksnrn8gi/image/upload/v1590692029/m3-project/hueco_dumqcz.png"
+                  alt="img-business"
+                />
+              ) : (
+                <img src={business.image_url} alt="img-business" />
+              )}
 
               <div className="details-business">
                 <p>

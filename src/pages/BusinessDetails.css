@@ -18,10 +18,11 @@
 
 .prices {
   display: flex;
+  
 }
 
 .hueco-price {
-  margin-left: 2%;
+  margin-left: 6%;
 }
 
 .description-details {
@@ -45,4 +46,5 @@
 .bleu-btn {
   color: rgb(24, 144, 255);
   font-weight: bolder;
+ 
 }

@@ -104,44 +104,37 @@ export default class Map extends Component {
 
           <NavigationControl className="NavigationControl" />
           <>
-          {
-            businesses
-            ? businesses.map((business) => {
-                
-                  if (business.coordinates.length>0){
-                    return  (
+            {businesses
+              ? businesses.map((business) => {
+                  if (business.coordinates.length > 0) {
+                    return (
                       <div>
-                      <Marker
-                    key={business._id}
-                    latitude={business.coordinates[1]}
-                    longitude={business.coordinates[0]}
-                  >
-                    <button
-                      className="marker-btn"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        this.setSelectedBusiness(business);
-                      }}
-                    >
-                      <img
-                        src="https://res.cloudinary.com/dksnrn8gi/image/upload/v1589701760/m3-project/pointer_ckmftw.png"
-                        alt="Marker Icon"
-                      />
-                    </button>
-                  </Marker>
-                  </div>
-                  );
-                  }else {
-                    return null
+                        <Marker
+                          key={business._id}
+                          latitude={business.coordinates[1]}
+                          longitude={business.coordinates[0]}
+                        >
+                          <button
+                            className="marker-btn"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              this.setSelectedBusiness(business);
+                            }}
+                          >
+                            <img
+                              src="https://res.cloudinary.com/dksnrn8gi/image/upload/v1589701760/m3-project/pointer_ckmftw.png"
+                              alt="Marker Icon"
+                            />
+                          </button>
+                        </Marker>
+                      </div>
+                    );
+                  } else {
+                    return null;
                   }
-                      
-                    
-                  }
-          ):null}
-            
+                })
+              : null}
           </>
-              
-            
 
           {selectedBusiness ? (
             <div>

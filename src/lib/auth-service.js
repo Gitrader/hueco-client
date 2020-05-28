@@ -17,9 +17,12 @@ class Auth {
     zip_code,
     service,
     phone_number,
-    image_url,
+    // image_url,
     description,
-    coordinates,
+    discount,
+    initial_price,
+    discounted_price
+    // coordinates,
   }) {
     return this.auth
       .post("/auth/signup", {
@@ -31,9 +34,12 @@ class Auth {
         zip_code,
         service,
         phone_number,
-        image_url,
+        // image_url,
         description,
-        coordinates,
+        discount,
+    initial_price,
+    discounted_price
+        // coordinates,
       })
       .then(({ data }) => data);
     // .then((response) => response.data);

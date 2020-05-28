@@ -37,11 +37,17 @@ export default class BusinessListCard extends Component {
                 <section className="business-card">
                   <Link to={`/businesses/${business._id}`}>
                     <div className="card">
+                  {!business.image_url?(<div>
+<img src="https://res.cloudinary.com/dksnrn8gi/image/upload/v1590692029/m3-project/hueco_dumqcz.png" alt="Avatar"
+                        style={{ width: 100 }}/>
+                  </div>):(<>
                       <img
                         src={business.image_url}
                         alt="Avatar"
                         style={{ width: 100 }}
                       />
+                      </>
+                  )}
                       <div className="container">
                         <h4>
                           <b>{business.business_name}</b>

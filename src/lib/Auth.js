@@ -69,9 +69,12 @@ class AuthProvider extends React.Component {
     zip_code,
     service,
     phone_number,
-    image_url,
+    // image_url,
     description,
-    coordinates
+    discount,
+    initial_price,
+    discounted_price
+    // coordinates
   ) => {
     console.log(
       "signup",
@@ -83,9 +86,9 @@ class AuthProvider extends React.Component {
       zip_code,
       service,
       phone_number,
-      image_url,
+      // image_url,
       description,
-      coordinates
+      // coordinates
     );
     axios
       .post(
@@ -99,9 +102,12 @@ class AuthProvider extends React.Component {
           zip_code,
           service,
           phone_number,
-          image_url,
+          // image_url,
           description,
-          coordinates,
+          discount,
+    initial_price,
+    discounted_price
+          // coordinates,
         },
         { withCredentials: true }
       )
