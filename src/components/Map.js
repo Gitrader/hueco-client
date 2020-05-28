@@ -103,11 +103,15 @@ export default class Map extends Component {
           </div>
 
           <NavigationControl className="NavigationControl" />
-
-          {businesses
+          <>
+          {
+            businesses
             ? businesses.map((business) => {
-                return (
-                  <Marker
+                
+                  if (business.coordinates.length>0){
+                    return  (
+                      <div>
+                      <Marker
                     key={business._id}
                     latitude={business.coordinates[1]}
                     longitude={business.coordinates[0]}
@@ -125,9 +129,19 @@ export default class Map extends Component {
                       />
                     </button>
                   </Marker>
-                );
-              })
-            : null}
+                  </div>
+                  );
+                  }else {
+                    return null
+                  }
+                      
+                    
+                  }
+          ):null}
+            
+          </>
+              
+            
 
           {selectedBusiness ? (
             <div>
